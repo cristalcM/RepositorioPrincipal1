@@ -8,10 +8,10 @@ public class movementplayer : MonoBehaviour
 {
     private float velocidad = 4f;
     private Vector3 posicionDobjetivo;
-    private bool isColliding = false;
+   
     private bool hasNewClick = false; // NUevo click
-    public float radioDeDeteccion = 1f; // Radio de detección para el CircleCast
-    public LayerMask layerDeColision; 
+    [SerializeField] float radioDeDeteccion = 1f; // Radio de detección para el CircleCast
+    [SerializeField] LayerMask layerDeColision; 
 
     void Start()
     {
