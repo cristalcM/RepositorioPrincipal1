@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      personaje-de-dibujos-animados-con-ojos-grandes_0: 7766099453115915085
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
