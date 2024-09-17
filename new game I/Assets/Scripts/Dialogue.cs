@@ -8,7 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private GameObject DialogoMark;
     [SerializeField] private GameObject DialogoPanel;
     [SerializeField] private TMP_Text DialogoText;
-    [SerializeField,TextArea(4,6)] private string[] DialogueLines;
+    [SerializeField, TextArea(4, 6)] private string[] DialogueLines;
 
     private float typinigTime = 0.05f;
 
@@ -72,7 +72,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         DialogoText.text = string.Empty;
 
-        foreach(char ch in DialogueLines[LineIndex])
+        foreach (char ch in DialogueLines[LineIndex])
         {
             DialogoText.text += ch;
             yield return new WaitForSecondsRealtime(typinigTime);

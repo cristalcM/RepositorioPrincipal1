@@ -26,9 +26,14 @@ public class MainPlayer : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+
+            //Ver la posicion del raton
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = this.transform.position.z;
 
+
+
+            //selecciona al objeto que quiere agarrar
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
             if (hit.collider != null && hit.collider.CompareTag("Agarrar"))
             {
@@ -52,9 +57,11 @@ public class MainPlayer : MonoBehaviour
             }
         }
 
+
         MoverHaciaObjetivo();
     }
 
+    //mover el personaje hacia donde quiere ir
     private void MoverHaciaObjetivo()
     {
         bool isColliding = Physics2D.OverlapCircle(transform.position, radioDeDeteccion, layerDeColision);
@@ -63,7 +70,7 @@ public class MainPlayer : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, posicionDobjetivo, velocidad * Time.deltaTime);
 
-            if (objetoObjetivo != null && Vector3.Distance(transform.position, objetoObjetivo.transform.position) <= 4f)
+            if (objetoObjetivo != null && Vector3.Distance(transform.position, objetoObjetivo.transform.position) <= 3f)
             {
                 Agarrar(objetoObjetivo);
                 hasNewClick = false;
@@ -82,6 +89,7 @@ public class MainPlayer : MonoBehaviour
         }
     }
 
+    //Metodo para agarrar el objeto
     void Agarrar(GameObject objeto)
     {
         objetoAgarrado = objeto;
@@ -102,6 +110,8 @@ public class MainPlayer : MonoBehaviour
         objetoObjetivo = null;
     }
 
+
+    //Metodo para soltar el objeto
     void Soltar()
     {
         if (objetoAgarrado != null)
