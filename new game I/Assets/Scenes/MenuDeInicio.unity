@@ -794,8 +794,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1743344646}
   m_HandleRect: {fileID: 804186833}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: -20
+  m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -983,7 +983,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2039,8 +2039,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 616072459}
   m_HandleRect: {fileID: 857345410}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
+  m_MinValue: -20
+  m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -2426,7 +2426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.020754695, b: 0.6736296, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

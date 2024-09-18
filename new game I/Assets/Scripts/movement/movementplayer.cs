@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class movementplayer : MonoBehaviour
 {
-    private float velocidad = 4f;
+    private float velocidad = 1f;
     private Vector3 posicionDobjetivo;
    
     private bool hasNewClick = false; // NUevo click

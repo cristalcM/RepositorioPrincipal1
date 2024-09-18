@@ -537,7 +537,7 @@ MonoBehaviour:
   DialogoPanel: {fileID: 455636113}
   DialogoText: {fileID: 455636115}
   DialogueLines:
-  - Miau, pinche puto
+  - Miau, miau
 --- !u!61 &335003468
 BoxCollider2D:
   m_ObjectHideFlags: 0
