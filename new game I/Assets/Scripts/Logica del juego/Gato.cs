@@ -27,7 +27,7 @@ public class Gato : MonoBehaviour
     // Detecta cuando el jugador entra en la zona de interacción
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Jugador"))  // Asegúrate de que el jugador tenga la etiqueta "Jugador"
+        if (collision.CompareTag("Player"))  // Asegúrate de que el jugador tenga la etiqueta "Jugador"
         {
             Debug.Log("Jugador cerca del gato.");
             jugadorEnRango = true;
@@ -37,7 +37,7 @@ public class Gato : MonoBehaviour
     // Detecta cuando el jugador sale de la zona de interacción
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Jugador"))
+        if (collision.CompareTag("Player"))
         {
             Debug.Log("Jugador fuera del rango del gato.");
             jugadorEnRango = false;

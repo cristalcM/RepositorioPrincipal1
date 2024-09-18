@@ -38,10 +38,17 @@ public class Player : MonoBehaviour
         tieneComida = true;
     }
 
+    // Método que solo Aike debe invocar para darle la taza al jugador
     public void RecibirTaza()
     {
         tieneTaza = true;
         Debug.Log("Ahora puedes llevar más comida de una sola vez al gato.");
+    }
+
+    // Método para verificar si el jugador tiene la taza
+    public bool TieneTaza()
+    {
+        return tieneTaza;
     }
 
 }

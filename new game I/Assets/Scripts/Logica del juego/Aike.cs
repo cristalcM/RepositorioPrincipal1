@@ -19,7 +19,7 @@ public class Aike : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Jugador"))
+        if (collision.CompareTag("Player"))
         {
             Debug.Log("Jugador cerca de Aike.");
             jugadorEnRango = true;
@@ -28,7 +28,7 @@ public class Aike : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Jugador"))
+        if (collision.CompareTag("Player"))
         {
             Debug.Log("Jugador fuera del rango de Aike.");
             jugadorEnRango = false;
