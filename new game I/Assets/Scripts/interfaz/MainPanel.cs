@@ -23,11 +23,14 @@ public class MainPanel : MonoBehaviour
     //---------------------------
     public GameObject mainPanel;
     public GameObject ajustesPanel;
+    public GameObject CustomizacionPanel;
 
     //---------------------------
-    //Para el nombre
-    public InputField inputText;
+    //Para el nombre y carrera
+    public InputField NombrePlayer;
     public Text TextaNema;
+    public InputField Career;
+    public Text TextCarrera;
     //---------------------------
 
     private void Awake()
@@ -35,9 +38,35 @@ public class MainPanel : MonoBehaviour
         VolumenFX.onValueChanged.AddListener(ChangeVolumenFX);
         volumenMaster.onValueChanged.AddListener(ChangeVolumenmaster);
 
+        // Cargar el nombre guardado (si es que existe uno)
+        if (PlayerPrefs.HasKey("NamePLayer"))
+        {
+            TextaNema.text = PlayerPrefs.GetString("NamePLayer");
+        }
+
+        // Cargar la carrera (si es que existe uno)
+        if (PlayerPrefs.HasKey("Career"))
+        {
+            TextCarrera.text = PlayerPrefs.GetString("Career");
+        }
 
         LoadVolumeSettings();
     }
+
+    private void Update()
+    {   //Si es menor el texto a un caracter no se activara el juego
+        if (TextaNema.text.Length < 1 && TextCarrera.text.Length < 1)
+        {
+            CustomizacionPanel.SetActive(true);
+        }
+
+        //Si es mayor el texto a un caracter se activara el juego
+        if (TextaNema.text.Length > 1 && TextCarrera.text.Length > 1)
+        {
+            CustomizacionPanel.SetActive(false);
+        }
+    }
+
 
 
     //---------------------------------------
@@ -48,30 +77,22 @@ public class MainPanel : MonoBehaviour
         //iniciaizar
         mainPanel.SetActive(false);
         ajustesPanel.SetActive(false);
+        CustomizacionPanel.SetActive(false);
+
 
         panel.SetActive(true);
 
-        PLaySoundButton();
-        
+        PLaySoundButton();      
     }
+
     //---------------------------------------
     //Método para cambiar de escena al presionar el botón Play
     //---------------------------------------
     public void ChangeScene(string sceneName)
-    {   
-        //Si es menor el texto a un caracter no se activara el juego
-        if (TextaNema.text.Length < 1)
-        {
-          //Avisa al jugador que debe llevar su NameTag  
-        }
-
-        //Si es menor el texto a un caracter no se activara el juego
-        if (TextaNema.text.Length > 1)
-        {  
-            //Guarda y activa la Escena
-            SceneManager.LoadScene(sceneName);
-            PlayerPrefs.SetString("NamePLayer", inputText.text);
-        }        
+    {
+        PlayerPrefs.SetString("NamePLayer", NombrePlayer.text);
+        PlayerPrefs.SetString("Career", Career.text); 
+        SceneManager.LoadScene(sceneName);
     }
 
     //---------------------------------------
