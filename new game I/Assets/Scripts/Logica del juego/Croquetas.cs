@@ -2,44 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Moneda : MonoBehaviour
+public class Croquetas : MonoBehaviour
 {
-    private bool jugadorEnRango = false;  // Verificar si el jugador está cerca
+    private bool jugadorEnRango = false;
 
     private void Update()
     {
         if (jugadorEnRango && Input.GetKeyDown(KeyCode.E))  // Si el jugador está cerca y presiona E
         {
-            RecogerTaza();
+            RecogerCroq();
         }
     }
 
-    // Detectar si el jugador está cerca de la moneda
+
+
+    // Detectar si el jugador está cerca de la croquetas
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Jugador cerca de la Moneda.");
+            Debug.Log("Jugador cerca de la croquetas.");
             jugadorEnRango = true;
         }
     }
 
-    // Detectar si el jugador se aleja de la moneda
+    // Detectar si el jugador se aleja de la croquetas
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Jugador se alejó de la Moneda.");
+            Debug.Log("Jugador se alejó de la croquetas.");
             jugadorEnRango = false;
         }
     }
 
-    // Método para recoger la taza
-    private void RecogerTaza()
+
+    // Método para recoger las croquetas
+    private void RecogerCroq()
     {
         Inventario inventario = FindFirstObjectByType<Inventario>();  // Encontrar al jugador
-        inventario.AñadirMoneda();  // Activar la posibilidad de recoger la taza
-        Debug.Log("Has recogido la Comida.");
+        Player player = FindFirstObjectByType<Player>();  // Encontrar al jugador
+        inventario.RecogerCroq();  // Activar la posibilidad de recoger la taza
+        player.BuscarComida();
+        player.PermitirRecibirComida();
+        Debug.Log("Has recogido la Moneda.");
         Destroy(gameObject);  // Destruir el objeto físico de la taza
     }
 }

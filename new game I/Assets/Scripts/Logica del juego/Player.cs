@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public  bool tieneTaza = false;  // Indica si el jugador tiene la taza
     private bool gatoEnRango = false;
     private bool puedeRecibirTaza = false;
+    private bool puedeRecibirComida = false;
     //vareables para Aike
     public GameObject aike;
     public GameObject sombrillaPrefab;
@@ -52,11 +53,35 @@ public class Player : MonoBehaviour
             BuscarComida();
         }
     }
+    //------------------------------
+    //Metodos para buscar comida
+    //------------------------------
 
-    void BuscarComida()
+
+
+    public void BuscarComida()
     {
-        Debug.Log("Has encontrado comida para el gato.");
-        tieneComida = true;
+        if (puedeRecibirComida) 
+        {
+            tieneComida = true;  
+            Debug.Log("Dale la comida a bigotes");
+            puedeRecibirComida = false;  // Después de recibirla, no puede recibirla de nuevo
+        }
+        else
+        {
+            Debug.Log("Necesitas ir por comida,");
+        }
+    }
+    // Método para verificar si el jugador tiene 
+    public bool TieneComida()
+    {
+        return tieneComida;
+    }
+    // Método que activa la posibilidad de recibir 
+    public void PermitirRecibirComida()
+    {
+        puedeRecibirComida = true;
+        Debug.Log("Ahora puedes recoger comida.");
     }
 
 
