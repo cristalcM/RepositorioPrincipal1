@@ -1,6 +1,7 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class Croquetas : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Croquetas : MonoBehaviour
 
     private void Update()
     {
-        if (jugadorEnRango && Input.GetKeyDown(KeyCode.E))  // Si el jugador está cerca y presiona E
+        if (jugadorEnRango && Input.GetKeyDown(KeyCode.E))  // Si el jugador estï¿½ cerca y presiona E
         {
             RecogerCroq();
         }
@@ -16,7 +17,7 @@ public class Croquetas : MonoBehaviour
 
 
 
-    // Detectar si el jugador está cerca de la croquetas
+    // Detectar si el jugador este cerca de la croquetas
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -31,13 +32,13 @@ public class Croquetas : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Jugador se alejó de la croquetas.");
+            Debug.Log("Jugador se alejï¿½ de la croquetas.");
             jugadorEnRango = false;
         }
     }
 
 
-    // Método para recoger las croquetas
+    // Mï¿½todo para recoger las croquetas
     private void RecogerCroq()
     {
         Inventario inventario = FindFirstObjectByType<Inventario>();  // Encontrar al jugador
@@ -45,7 +46,8 @@ public class Croquetas : MonoBehaviour
         inventario.RecogerCroq();  // Activar la posibilidad de recoger la taza
         player.BuscarComida();
         player.PermitirRecibirComida();
-        Debug.Log("Has recogido la Moneda.");
-        Destroy(gameObject);  // Destruir el objeto físico de la taza
+        Debug.Log("Has recogido la croqueta.");
+        Destroy(gameObject);  // Destruir el objeto fisico de la taza
+
     }
 }

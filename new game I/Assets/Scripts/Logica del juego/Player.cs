@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         else if (!tieneComida)
         {
             Debug.Log("Necesito encontrar comida primero.");
-            BuscarComida();
+            
         }
     }
     //------------------------------
@@ -58,28 +58,29 @@ public class Player : MonoBehaviour
     //------------------------------
 
 
-
     public void BuscarComida()
     {
-        if (puedeRecibirComida) 
+        if (puedeRecibirComida)
         {
-            tieneComida = true;  
+            tieneComida = true;
             Debug.Log("Dale la comida a bigotes");
-            puedeRecibirComida = false;  // Después de recibirla, no puede recibirla de nuevo
+            puedeRecibirComida = false;  // Despu?s de recibirla, no puede recibirla de nuevo
         }
         else
         {
             Debug.Log("Necesitas ir por comida,");
         }
     }
-    // Método para verificar si el jugador tiene 
+    // M?todo para verificar si el jugador tiene 
     public bool TieneComida()
     {
         return tieneComida;
     }
-    // Método que activa la posibilidad de recibir 
+    // M?todo que activa la posibilidad de recibir 
     public void PermitirRecibirComida()
     {
+        Debug.Log("Has encontrado comida para el gato.");
+        tieneComida = true;
         puedeRecibirComida = true;
         Debug.Log("Ahora puedes recoger comida.");
     }
@@ -94,24 +95,35 @@ public class Player : MonoBehaviour
 
         if (aikeScript.necesitaAyuda && tieneSombrilla)
         {
-            aikeScript.DarSombrilla();
+            aikeScript.DarSombrilla(tieneSombrilla);
             tieneSombrilla = false;
         }
         else if (!tieneSombrilla)
         {
             Debug.Log("Necesito encontrar la sombrilla primero.");
-            // Lógica para buscar y recoger la sombrilla
-            BuscarSombrilla();
+
+
         }
     }
-
-    void BuscarSombrilla()
+    //------------------------------
+    //Metodos para buscar Sombrilla
+    //------------------------------
+    public void BuscarSombrilla()
     {
-        Debug.Log("Has encontrado la sombrilla de Aike.");
+
         tieneSombrilla = true;
-        // Puedes agregar animaciones o efectos aquí
-        Instantiate(sombrillaPrefab, transform.position, Quaternion.identity);
+        Debug.Log("Dale la sombrilla a Aike");
+
     }
+    // Método para verificar si el jugador tiene 
+    public bool TieneSombra()
+    {
+        return tieneSombrilla;
+    }
+
+
+
+   
     //---------------------------------------------
     //METODOS PARA RECIBIR Y RECOLECTAR LA TAZA
     //---------------------------------------------

@@ -14,7 +14,9 @@ public class Aike : MonoBehaviour
     {
         if (jugadorEnRango && Input.GetKeyDown(KeyCode.E)) // Si el jugador está en rango y presiona E
         {
-            DarSombrilla();
+            Player player = FindFirstObjectByType<Player>();
+            DarSombrilla(player.TieneSombra());  // Llama a DarComida si el jugador está cerca
+            //player.PermitirRecibirSombra();
         }
     }
 
@@ -36,13 +38,23 @@ public class Aike : MonoBehaviour
         }
     }
 
-    public void DarSombrilla()
+    public void DarSombrilla(bool JugadorTieneSombra)
     {
+
+        Debug.Log("Texto de conversaion");
         if (necesitaAyuda)
         {
-            Debug.Log("Gracias por traerme la sombrilla.");
-            necesitaAyuda = false;
-            CrearTaza();  // Crear taza en el mundo();
+            if ( JugadorTieneSombra)
+            {
+                Debug.Log("Gracias por traerme la sombrilla.");
+                necesitaAyuda = false;
+                CrearTaza();  // Crear taza en el mundo();
+            }
+            else
+            {
+                Debug.Log("Necesito una sombrilla.");
+            }
+          
         }
         else
         {

@@ -1,10 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
-
-
 public class Gato : MonoBehaviour
 {
     public bool tieneHambre = true;
@@ -16,12 +12,20 @@ public class Gato : MonoBehaviour
 
     private void Update()
     {
-        if (jugadorEnRango && Input.GetKeyDown(KeyCode.E))  // Si el jugador está en rango y presiona E
-        {
-            Player  = FindFirstObjectByType<Player>();
-            /* DarComida(Player.tieneTaza());*/  // Llama a DarComida si el jugador está cerca
-            Player.RecibirTaza();
-        }
+        
+            if (jugadorEnRango && Input.GetKeyDown(KeyCode.E))  // Si el jugador está en rango y presiona E
+            {
+                Player = FindFirstObjectByType<Player>();
+                if (Player != null && Player.TieneComida())  // Solo dar comida si el jugador tiene comida
+                {
+                    DarComida(Player.TieneTaza());  // Llama a DarComida si el jugador está cerca y tiene comida
+                    Player.RecibirTaza();  // Después de dar comida, el jugador pierde su comida
+                }
+                else
+                {
+                    Debug.Log("No tienes comida para el gato.");
+                }
+            }
     }
 
     // Detecta cuando el jugador entra en la zona de interacción
@@ -44,6 +48,10 @@ public class Gato : MonoBehaviour
         }
     }
 
+
+    //___________________________
+    //Metodo para darle comida al gato.
+    //_________________________________
     public void DarComida(bool jugadorTieneTaza)
     {
         if (tieneHambre)
@@ -58,7 +66,7 @@ public class Gato : MonoBehaviour
                 comidaRecibida++;
                 Debug.Log("El gato ha recibido algo de comida.");
 
-                if (comidaRecibida >= 2)
+                if (comidaRecibida >= 3)
                 {
                     LlenarHambre();
                 }
@@ -73,6 +81,7 @@ public class Gato : MonoBehaviour
             Debug.Log("El gato ya está satisfecho.");
         }
     }
+
 
     private void LlenarHambre()
     {
