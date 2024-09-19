@@ -8,6 +8,7 @@ public class Dialogue: MonoBehaviour
     [SerializeField] private GameObject DialogoMark;
     [SerializeField] private GameObject DialogoPanel;
     [SerializeField] private TMP_Text DialogoText;
+
     [SerializeField, TextArea(4, 6)] private string[] DialogueLines;
 
     private float typinigTime = 0.05f;
@@ -19,25 +20,27 @@ public class Dialogue: MonoBehaviour
     // Update is called once per frame
     void Update()
     {//Empieza el dialogto
-        if (IsplayerInRange && Input.GetButtonDown("Fire1"))
-        {   //Solo si no esta inicializado
-            if (!DidDialogueStart)
-            {
-                StartDialogue();
-            }
-            //Seigue al otro dialogo
-            else if (DialogoText.text == DialogueLines[LineIndex])
-            {
-                NextDialogueLine();
-            }
-            //finaliza raipo el dialogo
-            else
-            {
-                StopAllCoroutines();
-                DialogoText.text = DialogueLines[LineIndex];
-            }
-        }
+        //if (IsplayerInRange && Input.GetKeyDown(KeyCode.E))
+        //{   //Solo si no esta inicializado
+        //    if (!DidDialogueStart)
+        //    {
+        //        StartDialogue();
+        //    }
+        //    //Seigue al otro dialogo
+        //    else if (DialogoText.text == DialogueLines[LineIndex])
+        //    {
+        //        NextDialogueLine();
+        //    }
+        //    //finaliza raipo el dialogo
+        //    else
+        //    {
+        //        StopAllCoroutines();
+        //        DialogoText.text = DialogueLines[LineIndex];
+        //    }
+        //}
     }
+
+
 
     //Inicia el dialogo desde el principio
     private void StartDialogue()
@@ -98,5 +101,17 @@ public class Dialogue: MonoBehaviour
             IsplayerInRange = false;
             DialogoMark.SetActive(false);
         }
+    }
+
+    //MOSTRAR Y CERRAR EL DIALOGO CON NPC
+    public void MostrarTexto(string texto)
+    {
+        DialogoPanel.SetActive(true);
+        DialogoText.text = texto;
+    }
+
+    public void CerrarDialogo()
+    {
+        DialogoPanel.SetActive(false);
     }
 }
