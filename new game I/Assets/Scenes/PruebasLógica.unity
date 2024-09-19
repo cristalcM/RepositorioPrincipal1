@@ -1061,6 +1061,22 @@ MonoBehaviour:
   tieneHambre: 1
   monedaPrefab: {fileID: 4150640829549934694, guid: ef3f2ad547aa0084190b407e0a062976, type: 3}
   tiempoParaHambre: 60
+  gatoDialogue: {fileID: 1033006657}
+  gatoDialogo:
+  - "Gato: \xA1MIAUURR!"
+  - "Jugador: \xBFTe encuentras bien, amiguito?"
+  - 'Gato: MRAUU'
+  - "Jugador: Mmm\u2026 pareces tener hambre, d\xE9jame buscarte algo de comer."
+  - "Jugador: Aqu\xED tienes."
+  - 'Gato: Mrauu'
+  - "Jugador: Parece que a\xFAn tienes hambre, supongo que tendr\xE9 que traerte
+    un poco m\xE1s."
+  - "Jugador: Ahora s\xED, provecho Bigotes."
+  - 'Gato: Miau'
+  - '*El gato le da una moneda en agradecimiento.*'
+  - "Jugador: Gracias amigo, regresar\xE9 a visitarte m\xE1s tarde por si vuelves
+    a tener hambre."
+  - "Gato: \xA1Miau!"
 --- !u!61 &701977504
 BoxCollider2D:
   m_ObjectHideFlags: 0

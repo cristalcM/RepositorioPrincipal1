@@ -9,6 +9,41 @@ public class Gato : MonoBehaviour
     private int comidaRecibida = 0;
     private bool jugadorEnRango = false;  // Para detectar si el jugador está cerca
     private Player Player;
+    public Dialogue gatoDialogue;
+    private bool ComidaEntregada = false;
+
+
+    //__________________________________________
+    //SUS DIALOGOS 
+    //_________________________________________
+    [SerializeField, TextArea(4, 6)]
+    private string[] gatoDialogoSincomida = 
+     {
+        "Gato: ¡MIAUURR!",
+        "Jugador: ¿Te encuentras bien, amiguito?",
+        "Gato: MRAUU",
+        "Jugador: Mmm… pareces tener hambre, déjame buscarte algo de comer.",
+        
+       
+    };
+    [SerializeField, TextArea(4, 6)]
+    private string[] gatoDialogoConcomida =
+    {
+    // Después de dar la primera comida
+        "Jugador: Aquí tienes.",
+        "Gato: Mrauu",
+        "Jugador: Parece que aún tienes hambre, supongo que tendré que traerte un poco más.",
+    };
+    [SerializeField, TextArea(4, 6)]
+    private string[] gatoDialogoFinal=
+   {
+     // Después de la segunda comida
+        "Jugador: Ahora sí, provecho Bigotes.",
+        "Gato: Miau",
+        "*El gato le da una moneda en agradecimiento.*",
+        "Jugador: Gracias amigo, regresaré a visitarte más tarde por si vuelves a tener hambre.",
+        "Gato: ¡Miau!"
+    };
 
     private void Update()
     {
@@ -24,7 +59,8 @@ public class Gato : MonoBehaviour
                 else
                 {
                     Debug.Log("No tienes comida para el gato.");
-                }
+                IniciarGatoDialogo(false);
+            }
             }
     }
 
@@ -56,10 +92,12 @@ public class Gato : MonoBehaviour
     {
         if (tieneHambre)
         {
+            ComidaEntregada = true;
             if (jugadorTieneTaza)
             {
                 Debug.Log("El gato está siendo alimentado en un solo viaje.");
                 LlenarHambre();
+                IniciarGatoDialogo(true);  // Continuar con el diálogo
             }
             else
             {
@@ -73,12 +111,14 @@ public class Gato : MonoBehaviour
                 else
                 {
                     Debug.Log("El gato sigue con hambre. Necesitas traer más comida.");
+                    IniciarGatoDialogo(true);  // Continuar con el diálogo
                 }
             }
         }
         else
         {
             Debug.Log("El gato ya está satisfecho.");
+            IniciarGatoDialogo(true );  // Continuar con el diálogo
         }
     }
 
@@ -103,5 +143,33 @@ public class Gato : MonoBehaviour
         yield return new WaitForSeconds(tiempoParaHambre);
         tieneHambre = true;
         Debug.Log("El gato tiene hambre nuevamente.");
+    }
+
+    private int currentDialogueIndex = 0;
+
+
+    //______________________________
+    //INICIAR DIALOGO CON EL GATO
+    //________________________________
+    private void IniciarGatoDialogo(bool TieneComida)
+    {
+        string[] dialogo = TieneComida ? gatoDialogoSincomida : gatoDialogoConcomida;
+        if (currentDialogueIndex < dialogo.Length)
+        {
+            gatoDialogue.MostrarTexto(dialogo[currentDialogueIndex]);
+            currentDialogueIndex++;  // Avanzar al siguiente diálogo en cada interacción
+        }
+        else if (ComidaEntregada && currentDialogueIndex < gatoDialogoFinal.Length)
+        {
+            //si ya entrego la comida muestra el dialogo final
+            gatoDialogue.MostrarTexto(gatoDialogoFinal[currentDialogueIndex]);
+            currentDialogueIndex++;
+        }
+        else
+        {
+            gatoDialogue.CerrarDialogo();
+            Debug.Log("Diálogo finalizado.");
+            currentDialogueIndex = 0;  // Reiniciar el diálogo si es necesario
+        }
     }
 }
