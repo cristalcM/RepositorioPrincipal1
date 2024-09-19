@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private bool tieneComida = false;
     public  bool tieneTaza = false;  // Indica si el jugador tiene la taza
     private bool gatoEnRango = false;
+    private bool puedeRecibirTaza = false;
     //vareables para Aike
     public GameObject aike;
     public GameObject sombrillaPrefab;
@@ -61,10 +62,18 @@ public class Player : MonoBehaviour
     // Método que solo Aike debe invocar para darle la taza al jugador
     public void RecibirTaza()
     {
-
-
-        tieneTaza = true;
-        Debug.Log("Ahora puedes llevar más comida de una sola vez al gato.");
+        //tieneTaza = true;
+        //Debug.Log("Ahora puedes llevar más comida de una sola vez al gato.");
+        if (puedeRecibirTaza)  // Solo puede recibir la taza si está permitido
+        {
+            tieneTaza = true;  // El jugador obtiene la taza
+            Debug.Log("Has recibido una taza. Ahora puedes llevar más comida al gato de una sola vez.");
+            puedeRecibirTaza = false;  // Después de recibirla, no puede recibirla de nuevo
+        }
+        else
+        {
+            Debug.Log("No puedes recibir la taza sin antes interactuar correctamente.");
+        }
     }
 
     // Método para verificar si el jugador tiene la taza
@@ -72,8 +81,14 @@ public class Player : MonoBehaviour
     {
         return tieneTaza;
     }
+    // Método que activa la posibilidad de recibir la taza (llamado solo por la taza física)
+    public void PermitirRecibirTaza()
+    {
+        puedeRecibirTaza = true;
+        Debug.Log("Ahora puedes recoger la taza.");
+    }
 
-    
+
 
     //--------------------------------------
     //Metodos para aike

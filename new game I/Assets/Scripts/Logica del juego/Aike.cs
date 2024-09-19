@@ -9,9 +9,10 @@ public class Aike : MonoBehaviour
     public GameObject tazaPrefab;
     private bool jugadorEnRango = false;  // Para detectar si el jugador está cerca
 
+
     private void Update()
     {
-        if (jugadorEnRango && Input.GetKeyDown(KeyCode.E))  // Si el jugador está en rango y presiona E
+        if (jugadorEnRango && Input.GetKeyDown(KeyCode.E)) // Si el jugador está en rango y presiona E
         {
             DarSombrilla();
         }
@@ -41,7 +42,7 @@ public class Aike : MonoBehaviour
         {
             Debug.Log("Gracias por traerme la sombrilla.");
             necesitaAyuda = false;
-            DarRecompensa();
+            CrearTaza();  // Crear taza en el mundo();
         }
         else
         {
@@ -49,11 +50,11 @@ public class Aike : MonoBehaviour
         }
     }
 
-    private void DarRecompensa()
-    {
-        Player jugador = FindFirstObjectByType<Player>();
-        jugador.RecibirTaza();
-        Debug.Log("Aike te ha dado una taza.");
-        Instantiate(tazaPrefab, transform.position, Quaternion.identity);
-    }
+   
+        private void CrearTaza()
+        {
+            Debug.Log("Aike ha dejado una taza.");
+            Instantiate(tazaPrefab, transform.position + new Vector3(1, 0, 0), Quaternion.identity);  // Aparece la taza
+        }
+    
 }
