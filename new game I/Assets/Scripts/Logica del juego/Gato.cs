@@ -86,7 +86,7 @@ public class Gato : MonoBehaviour
     private void DarRecompensa()
     {
         Debug.Log("El gato te ha dado una moneda.");
-        Instantiate(monedaPrefab, transform.position, Quaternion.identity);
+        Instantiate(monedaPrefab, transform.position + new Vector3(0, -2, 0), Quaternion.identity);
     }
 
     private IEnumerator TemporizadorHambre()

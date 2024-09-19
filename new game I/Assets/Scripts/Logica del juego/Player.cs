@@ -59,36 +59,6 @@ public class Player : MonoBehaviour
         tieneComida = true;
     }
 
-    // Método que solo Aike debe invocar para darle la taza al jugador
-    public void RecibirTaza()
-    {
-        //tieneTaza = true;
-        //Debug.Log("Ahora puedes llevar más comida de una sola vez al gato.");
-        if (puedeRecibirTaza)  // Solo puede recibir la taza si está permitido
-        {
-            tieneTaza = true;  // El jugador obtiene la taza
-            Debug.Log("Has recibido una taza. Ahora puedes llevar más comida al gato de una sola vez.");
-            puedeRecibirTaza = false;  // Después de recibirla, no puede recibirla de nuevo
-        }
-        else
-        {
-            Debug.Log("No puedes recibir la taza sin antes interactuar correctamente.");
-        }
-    }
-
-    // Método para verificar si el jugador tiene la taza
-    public bool TieneTaza()
-    {
-        return tieneTaza;
-    }
-    // Método que activa la posibilidad de recibir la taza (llamado solo por la taza física)
-    public void PermitirRecibirTaza()
-    {
-        puedeRecibirTaza = true;
-        Debug.Log("Ahora puedes recoger la taza.");
-    }
-
-
 
     //--------------------------------------
     //Metodos para aike
@@ -117,6 +87,40 @@ public class Player : MonoBehaviour
         // Puedes agregar animaciones o efectos aquí
         Instantiate(sombrillaPrefab, transform.position, Quaternion.identity);
     }
+    //---------------------------------------------
+    //METODOS PARA RECIBIR Y RECOLECTAR LA TAZA
+    //---------------------------------------------
+    // Método que solo Aike debe invocar para darle la taza al jugador
+    public void RecibirTaza()
+    {
+       
+        if (puedeRecibirTaza)  // Solo puede recibir la taza si está permitido
+        {
+            tieneTaza = true;  // El jugador obtiene la taza
+            Debug.Log("Has recibido una taza. Ahora puedes llevar más comida al gato de una sola vez.");
+            puedeRecibirTaza = false;  // Después de recibirla, no puede recibirla de nuevo
+        }
+        else
+        {
+            Debug.Log("No puedes recibir la taza sin antes interactuar correctamente.");
+        }
+    }
+
+    // Método para verificar si el jugador tiene la taza
+    public bool TieneTaza()
+    {
+        return tieneTaza;
+    }
+    // Método que activa la posibilidad de recibir la taza (llamado solo por la taza física)
+    public void PermitirRecibirTaza()
+    {
+        puedeRecibirTaza = true;
+        Debug.Log("Ahora puedes recoger la taza.");
+    }
+
+    //________________
+    // Coliciones
+    //________________
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -82,6 +82,8 @@ public class MainPlayer : MonoBehaviour
             }
         }
 
+
+        //Si coliciona con
         if (isColliding)
         {
             hasNewClick = false;
