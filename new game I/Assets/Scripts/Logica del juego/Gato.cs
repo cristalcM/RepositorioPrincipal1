@@ -58,7 +58,7 @@ public class Gato : MonoBehaviour
                 comidaRecibida++;
                 Debug.Log("El gato ha recibido algo de comida.");
 
-                if (comidaRecibida >= 3)
+                if (comidaRecibida >= 2)
                 {
                     LlenarHambre();
                 }
