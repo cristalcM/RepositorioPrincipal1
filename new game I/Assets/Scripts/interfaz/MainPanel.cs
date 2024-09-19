@@ -24,6 +24,12 @@ public class MainPanel : MonoBehaviour
     public GameObject mainPanel;
     public GameObject ajustesPanel;
 
+    //---------------------------
+    //Para el nombre
+    public InputField inputText;
+    public Text TextaNema;
+    //---------------------------
+
     private void Awake()
     {
         VolumenFX.onValueChanged.AddListener(ChangeVolumenFX);
@@ -52,8 +58,20 @@ public class MainPanel : MonoBehaviour
     //Método para cambiar de escena al presionar el botón Play
     //---------------------------------------
     public void ChangeScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
+    {   
+        //Si es menor el texto a un caracter no se activara el juego
+        if (TextaNema.text.Length < 1)
+        {
+          //Avisa al jugador que debe llevar su NameTag  
+        }
+
+        //Si es menor el texto a un caracter no se activara el juego
+        if (TextaNema.text.Length > 1)
+        {  
+            //Guarda y activa la Escena
+            SceneManager.LoadScene(sceneName);
+            PlayerPrefs.SetString("NamePLayer", inputText.text);
+        }        
     }
 
     //---------------------------------------

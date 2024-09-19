@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Dialogue: MonoBehaviour
 {
     [SerializeField] private GameObject DialogoMark;
     [SerializeField] private GameObject DialogoPanel;
