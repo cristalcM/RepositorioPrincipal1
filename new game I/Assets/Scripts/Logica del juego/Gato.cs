@@ -64,7 +64,7 @@ public class Gato : MonoBehaviour
     //_________________________________
     public void DarComida(bool jugadorTieneTaza)
     {
-        if (tieneHambre)
+        if (tieneHambre == true)
         {
             ComidaEntregada = true;
             if (jugadorTieneTaza)
@@ -81,6 +81,7 @@ public class Gato : MonoBehaviour
                 if (comidaRecibida == 3)
                 {
                     LlenarHambre();
+                    Dialogo.MostrarDialogo(gatoDialogoFinal);
                 }
                 else
                 {
@@ -92,7 +93,7 @@ public class Gato : MonoBehaviour
         else
         {
             Debug.Log("El gato ya está satisfecho.");
-            Dialogo.MostrarDialogo(gatoDialogoFinal);
+            Dialogo.MostrarDialogo(gatoDialogoSatisfecho);
         }
     }
 
@@ -163,31 +164,15 @@ public class Gato : MonoBehaviour
         "Gato: ¡Miau!"
     };
 
+    private string[] gatoDialogoSatisfecho =
+    {
+    // Después de dar la primera comida
+        "Gato: Mrauu",
+        "Jugador: Ah ya te ves muy rechoncho, supongo que ya estaa lleno.",
+    };
+
     //private int currentDialogueIndex = 0;
     //public Dialogue gatoDialogue;
 
-    //______________________________
-    //INICIAR DIALOGO CON EL GATO
-    //________________________________
-    private void IniciarGatoDialogo(bool TieneComida)
-    {
-        //string[] dialogo = TieneComida ? gatoDialogoConcomida : gatoDialogoSincomida;
-        //if (currentDialogueIndex < dialogo.Length)
-        //{
-        //    gatoDialogue.MostrarTexto(dialogo[currentDialogueIndex]);
-        //    currentDialogueIndex++;  // Avanzar al siguiente diálogo en cada interacción
-        //}
-        //else if (ComidaEntregada && currentDialogueIndex < gatoDialogoFinal.Length)
-        //{
-        //    //si ya entrego la comida muestra el dialogo final
-        //    gatoDialogue.MostrarTexto(gatoDialogoFinal[currentDialogueIndex]);
-        //    currentDialogueIndex++;
-        //}
-        //else
-        //{
-        //    gatoDialogue.CerrarDialogo();
-        //    Debug.Log("Diálogo finalizado.");
-        //    currentDialogueIndex = 0;  // Reiniciar el diálogo si es necesario
-        //}
-    }
+
 }

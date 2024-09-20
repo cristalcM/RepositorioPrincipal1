@@ -10,7 +10,7 @@ public class DialogoNPC : MonoBehaviour
     public GameObject DialogoPanel;
     public TMP_Text DialogoTexto;
     public float typingSpeed = 0.05f;
-    public Button botonSiguiente; // El botón para avanzar el diálogo
+   
 
     private string[] DialogoLineas; //Almacena las lineas del dialogo.
     private int indiceLineas; //LLeva el segimiento de la linea.
@@ -22,10 +22,7 @@ public class DialogoNPC : MonoBehaviour
     //Metodo para iniciat un dialogo
     //---------------------------------------
 
-    private void Start()
-    {
-        botonSiguiente.onClick.AddListener(SiguienteLinea); // Asignar el botón
-    }
+  
 
     public void MostrarDialogo(string[] lineas)
     {
@@ -33,7 +30,7 @@ public class DialogoNPC : MonoBehaviour
         indiceLineas = 0;
         DialogoPanel.SetActive(true);
         dialogoActivo = true;
-
+        Time.timeScale = 0f;
 
 
 
@@ -79,6 +76,8 @@ public class DialogoNPC : MonoBehaviour
     {
         DialogoPanel.SetActive(false);
         dialogoActivo = false;
+        Time.timeScale = 1f;
+        DialogoTexto.text = "";
     }
 
     // Coroutine para mostrar el texto letra por letra
@@ -89,18 +88,18 @@ public class DialogoNPC : MonoBehaviour
         foreach (char letra in mensaje.ToCharArray())
         {
             DialogoTexto.text += letra;  // Agregar cada letra al texto
-            yield return new WaitForSeconds(typingSpeed);  // Esperar un tiempo antes de la siguiente letra
+            yield return new WaitForSecondsRealtime(typingSpeed);  // Esperar un tiempo antes de la siguiente letra
         }
     }
 
     private void Update()
     {
-        //Debug.Log("Botón presionado, avanzando línea.");
-        // Si el diálogo está activo y el jugador presiona la tecla E, avanzar al siguiente texto
-        //if (dialogoActivo && Input.GetKeyDown(KeyCode.W))
-        //{
-        //    SiguienteLinea();
-        //}
+       
+       // Si el diálogo está activo y el jugador presiona la tecla E, avanzar al siguiente texto
+        if (dialogoActivo && Input.GetKeyDown(KeyCode.W))
+        {
+            SiguienteLinea();
+        }
     }
 }
 
