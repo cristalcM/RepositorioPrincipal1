@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainPanel : MonoBehaviour
 {
@@ -25,12 +26,16 @@ public class MainPanel : MonoBehaviour
     public GameObject ajustesPanel;
     public GameObject CustomizacionPanel;
 
+
+    //------------------------
+    [Header("Customización")]
     //---------------------------
     //Para el nombre y carrera
-    public InputField NombrePlayer;
-    public Text TextaNema;
-    public InputField Career;
-    public Text TextCarrera;
+    public TMP_InputField NombrePlayer;
+    public TMP_Text TextaNema;
+    public TMP_InputField Career;
+    public TMP_Text TextCarrera;
+    public GameObject BSalir;
     //---------------------------
 
     private void Awake()
@@ -54,16 +59,17 @@ public class MainPanel : MonoBehaviour
     }
 
     private void Update()
-    {   //Si es menor el texto a un caracter no se activara el juego
+    {   
+        //Si es menor el texto a un caracter no se activara el juego
         if (TextaNema.text.Length < 1 && TextCarrera.text.Length < 1)
         {
-            CustomizacionPanel.SetActive(true);
+            BSalir.SetActive(false);
         }
 
         //Si es mayor el texto a un caracter se activara el juego
         if (TextaNema.text.Length > 1 && TextCarrera.text.Length > 1)
         {
-            CustomizacionPanel.SetActive(false);
+            BSalir.SetActive(true);
         }
     }
 

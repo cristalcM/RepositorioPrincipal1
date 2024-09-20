@@ -1079,10 +1079,11 @@ MonoBehaviour:
   mainPanel: {fileID: 2032981954}
   ajustesPanel: {fileID: 1239168064}
   CustomizacionPanel: {fileID: 1379671095}
-  NombrePlayer: {fileID: 0}
-  TextaNema: {fileID: 0}
-  Career: {fileID: 0}
-  TextCarrera: {fileID: 0}
+  NombrePlayer: {fileID: 150408696}
+  TextaNema: {fileID: 1211242409}
+  Career: {fileID: 1037095403}
+  TextCarrera: {fileID: 752881696}
+  BSalir: {fileID: 413986313}
 --- !u!1 &353643927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,7 +1236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &413986314
 RectTransform:
   m_ObjectHideFlags: 0
