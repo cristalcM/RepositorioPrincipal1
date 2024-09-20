@@ -2,133 +2,110 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class DialogoNPC : MonoBehaviour
 {
-    [SerializeField] private GameObject DialogoMark;  // Marca que aparece cuando el jugador está cerca
-    [SerializeField] private GameObject DialogoPanel;  // Panel de diálogo
-    [SerializeField] private TMP_Text DialogoText;  // Texto que se muestra en el panel de diálogo
+    public GameObject DialogoPanel;
+    public TMP_Text DialogoTexto;
+    public float typingSpeed = 0.05f;
+    public Button botonSiguiente; // El botón para avanzar el diálogo
 
-    [SerializeField, TextArea(4, 6)] private string[] DialogueLinesNPC;  // Líneas del gato
-    [SerializeField, TextArea(4, 6)] private string[] DialogueLinesJugador;  // Líneas del jugador
-
-    private float typinigTime = 0.05f;  // Velocidad de escritura
-    private bool IsplayerInRange;
+    private string[] DialogoLineas; //Almacena las lineas del dialogo.
+    private int indiceLineas; //LLeva el segimiento de la linea.
+    private Coroutine currentCourutine;
+    private bool dialogoActivo;
     private bool DidDialogueStart;
-    private int LineIndex;
-    private bool isTalkingToNPC;  // Controla si está hablando con el gato
 
-    // Este método es para activar el diálogo del gato
-    public void IniciarDialogoConGato()
+    //---------------------------------------
+    //Metodo para iniciat un dialogo
+    //---------------------------------------
+
+    private void Start()
     {
-        isTalkingToNPC = true;
-        StartDialogue();
+        botonSiguiente.onClick.AddListener(SiguienteLinea); // Asignar el botón
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MostrarDialogo(string[] lineas)
     {
-        // Empieza el diálogo si el jugador está en rango y presiona E
-        if (IsplayerInRange && Input.GetKeyDown(KeyCode.E))
+        DialogoLineas = lineas;
+        indiceLineas = 0;
+        DialogoPanel.SetActive(true);
+        dialogoActivo = true;
+
+
+
+
+        if (currentCourutine != null)
         {
-            if (!DidDialogueStart)
+          
+            StopCoroutine(currentCourutine);
+        }
+
+        currentCourutine = StartCoroutine(MostrarTextoLetraPorLetra(DialogoLineas[indiceLineas]));
+    }
+
+   
+    public void SiguienteLinea()
+    {
+        if (DialogoTexto.text == DialogoLineas[indiceLineas])
+        {
+            indiceLineas++;
+            Debug.Log("Avanzando a la línea " + indiceLineas);
+            if (indiceLineas < DialogoLineas.Length)
             {
-                StartDialogue();
-            }
-            else if (DialogoText.text == GetCurrentDialogueLine())
-            {
-                NextDialogueLine();
+                //muestra la sigiente linea
+                if (currentCourutine != null)
+                {
+                    StopCoroutine (currentCourutine);
+                }
+                currentCourutine = StartCoroutine(MostrarTextoLetraPorLetra(DialogoLineas[indiceLineas]));
+               
             }
             else
             {
-                StopAllCoroutines();
-                DialogoText.text = GetCurrentDialogueLine();
+                OcultarDialogo();
             }
-        }
-    }
-
-    // Inicia el diálogo desde el principio
-    private void StartDialogue()
-    {
-        DidDialogueStart = true;
-        DialogoPanel.SetActive(true);
-        DialogoMark.SetActive(false);
-        LineIndex = 0;
-        Time.timeScale = 0f;
-        StartCoroutine(ShowLine());
-        Debug.Log("Diálogo iniciado.");
-    }
-
-    // Muestra la siguiente línea del diálogo
-    private void NextDialogueLine()
-    {
-        LineIndex++;
-        if (LineIndex < GetDialogueLines().Length)
-        {
-            StartCoroutine(ShowLine());
         }
         else
         {
-            DidDialogueStart = false;
-            DialogoPanel.SetActive(false);
-            DialogoMark.SetActive(true);
-            Time.timeScale = 1f;
-            Debug.Log("Diálogo terminado.");
+            StopAllCoroutines();
+            DialogoTexto.text = DialogoLineas[indiceLineas];
         }
     }
 
-    // Muestra las líneas de diálogo carácter por carácter
-    private IEnumerator ShowLine()
+    public void OcultarDialogo()
     {
-        DialogoText.text = string.Empty;
+        DialogoPanel.SetActive(false);
+        dialogoActivo = false;
+    }
 
-        foreach (char ch in GetCurrentDialogueLine())
+    // Coroutine para mostrar el texto letra por letra
+    private IEnumerator MostrarTextoLetraPorLetra(string mensaje)
+    {
+        DialogoTexto.text = "";  // Limpiar el texto antes de empezar
+
+        foreach (char letra in mensaje.ToCharArray())
         {
-            DialogoText.text += ch;
-            yield return new WaitForSecondsRealtime(typinigTime);
-        }
-
-        Debug.Log($"Línea mostrada: {GetCurrentDialogueLine()}");
-    }
-
-    // Retorna la línea actual de diálogo dependiendo del NPC
-    private string GetCurrentDialogueLine()
-    {
-        return GetDialogueLines()[LineIndex];
-    }
-
-    // Retorna las líneas de diálogo correctas dependiendo del NPC (jugador o gato)
-    private string[] GetDialogueLines()
-    {
-        if (isTalkingToNPC)
-        {
-            // Alternamos entre líneas del jugador y el gato
-            return LineIndex % 2 == 0 ? DialogueLinesJugador : DialogueLinesNPC;
-        }
-
-        return DialogueLinesJugador;  // Default al jugador si no es el gato
-    }
-
-    // Detecta si el jugador está cerca para iniciar el diálogo
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            IsplayerInRange = true;
-            DialogoMark.SetActive(true);
-            Debug.Log("Jugador está en rango para interactuar.");
+            DialogoTexto.text += letra;  // Agregar cada letra al texto
+            yield return new WaitForSeconds(typingSpeed);  // Esperar un tiempo antes de la siguiente letra
         }
     }
 
-    // Detecta si el jugador se aleja
-    private void OnTriggerExit2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            IsplayerInRange = false;
-            DialogoMark.SetActive(false);
-            Debug.Log("Jugador se ha alejado del rango.");
-        }
+        //Debug.Log("Botón presionado, avanzando línea.");
+        // Si el diálogo está activo y el jugador presiona la tecla E, avanzar al siguiente texto
+        //if (dialogoActivo && Input.GetKeyDown(KeyCode.W))
+        //{
+        //    SiguienteLinea();
+        //}
     }
 }
+
+
+
+
+
+

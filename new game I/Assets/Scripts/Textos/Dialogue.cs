@@ -17,27 +17,27 @@ public class Dialogue: MonoBehaviour
     private bool DidDialogueStart;
     private int LineIndex;
 
-    // Update is called once per frame
+    
     void Update()
     {//Empieza el dialogto
-        //if (IsplayerInRange && Input.GetKeyDown(KeyCode.E))
-        //{   //Solo si no esta inicializado
-        //    if (!DidDialogueStart)
-        //    {
-        //        StartDialogue();
-        //    }
-        //    //Seigue al otro dialogo
-        //    else if (DialogoText.text == DialogueLines[LineIndex])
-        //    {
-        //        NextDialogueLine();
-        //    }
-        //    //finaliza raipo el dialogo
-        //    else
-        //    {
-        //        StopAllCoroutines();
-        //        DialogoText.text = DialogueLines[LineIndex];
-        //    }
-        //}
+        if (IsplayerInRange && Input.GetKeyDown(KeyCode.Q))
+        {   //Solo si no esta inicializado
+            if (!DidDialogueStart)
+            {
+                StartDialogue();
+            }
+            //Seigue al otro dialogo
+            else if (DialogoText.text == DialogueLines[LineIndex])
+            {
+                NextDialogueLine();
+            }
+            //finaliza raipo el dialogo
+            else
+            {
+                StopAllCoroutines();
+                DialogoText.text = DialogueLines[LineIndex];
+            }
+        }
     }
 
 
