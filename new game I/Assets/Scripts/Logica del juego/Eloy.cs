@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.UIElements.UxmlAttributeDescription;
-using UnityEngine.UIElements;
 using static UnityEditor.Experimental.GraphView.GraphView;
 using static UnityEditor.PlayerSettings;
 
@@ -17,23 +15,22 @@ public class Eloy : MonoBehaviour
     public GameObject llaveroObjeto;  // Llavero que recibirá el jugador
     private bool haRecibidoLlavero = false;
     private bool esperandoRespuesta = false;
-
+    
     //Canvas y sus elementos
-    public Canvas coordenadasCanvas;
     public InputField inputX;
     public InputField inputY;
-
+    public Button enviarButton;
     public DialogoNPC Dialogo;
-    //public Button enviarButton;
-    public Text dialogoTexto;
+    public GameObject panelPregunta;
+    
 
     void Start()
     {
         // Ocultar el Canvas al inicio
-        coordenadasCanvas.gameObject.SetActive(false);
+        panelPregunta.gameObject.SetActive(false);
 
-        //// Asignar la función al botón
-        //enviarButton.onClick.AddListener(EnviarCoordenadas);
+        // Asignar la función al botón
+        enviarButton.onClick.AddListener(EnviarCoordenadas);
     }
 
     void Update()
@@ -53,7 +50,7 @@ public class Eloy : MonoBehaviour
             esperandoRespuesta = true;
 
             // Mostrar el Canvas para ingresar las coordenadas
-            coordenadasCanvas.gameObject.SetActive(true);
+            panelPregunta.gameObject.SetActive(true);
         }
         else
         {
@@ -66,7 +63,7 @@ public class Eloy : MonoBehaviour
     {
         // Obtener las coordenadas ingresadas por el jugador
         float x, y;
-
+        Dialogo.MostrarDialogo(EloydialogoEsperando);
         // Verificar si las coordenadas son válidas
         if (float.TryParse(inputX.text, out x) && float.TryParse(inputY.text, out y))
         {
@@ -82,7 +79,7 @@ public class Eloy : MonoBehaviour
     void VerificarCoordenadas(Vector2 coordenadasIngresadas)
 
     {
-        Dialogo.MostrarDialogo(EloydialogoEsperando);
+        Dialogo.MostrarDialogo(EloyDialogoSinAyuda);
         if (coordenadasIngresadas == coordenadasCorrectas)
         {
             Debug.Log("Eloy: ¡Gracias, asere! ¡Esas son las coordenadas correctas! Aquí tienes un llavero.");
@@ -97,7 +94,7 @@ public class Eloy : MonoBehaviour
 
         // Ocultar el Canvas después de verificar
         esperandoRespuesta = false;
-        coordenadasCanvas.gameObject.SetActive(false);
+        panelPregunta.gameObject.SetActive(false);
     }
 
     void DarLlavero()
