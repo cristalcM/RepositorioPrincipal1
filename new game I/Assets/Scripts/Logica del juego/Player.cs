@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
     public GameObject sombrillaPrefab;
     private bool tieneSombrilla = false;
     private bool AikeEnRango = false;
+    //variables para Eloy
+    private bool puedeRecibirllavero;
+    private bool Tienellavero;
+
 
     void Update()
     {
@@ -153,6 +157,38 @@ public class Player : MonoBehaviour
     {
         puedeRecibirTaza = true;
         Debug.Log("Ahora puedes recoger la taza.");
+    }
+
+
+    //---------------------------------------------
+    //METODOS PARA RECIBIR Y RECOLECTAR El llavero
+    //---------------------------------------------
+    // Metodo que solo eloy puede invocar para que player reciba la taza.
+    public void RecibirLavero()
+    {
+
+        if (puedeRecibirllavero)  // Solo puede recibir el llavero si está permitido
+        {
+            Tienellavero = true;  // El jugador obtiene el llavero.
+            Debug.Log("Has recibido un llavero.");
+            puedeRecibirllavero = false;  // Después de recibirla, no puede recibirla de nuevo
+        }
+        else
+        {
+            Debug.Log("No puedes recibir la taza sin antes interactuar correctamente.");
+        }
+    }
+
+    // Método para verificar si el jugador tiene el llavero
+    public bool TieneLlavero()
+    {
+        return Tienellavero;
+    }
+    // Método que activa la posibilidad de recibir el llavero (llamado solo por la taza física)
+    public void PermitirRecibirllavero()
+    {
+        puedeRecibirllavero = true;
+        Debug.Log("Ahora puedes recoger el llavero.");
     }
 
     //________________
