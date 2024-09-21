@@ -8,6 +8,10 @@ using TMPro;
 
 public class MainPanel : MonoBehaviour
 {
+    //public TMP_Text Prueba1;
+    //public TMP_Text Prueba2;
+    //public GameObject VisibleP1;
+    //public GameObject VisibleP2;
 
     //--------------------------
     [Header("Ajustes")]
@@ -58,6 +62,19 @@ public class MainPanel : MonoBehaviour
         LoadVolumeSettings();
     }
 
+    public void UpdateInfo()
+    {
+
+        PlayerPrefs.SetString("NamePLayer", NombrePlayer.text);
+        PlayerPrefs.SetString("Career", Career.text);     
+
+        //Prueba1.text = PlayerPrefs.GetString("NamePLayer", NombrePlayer.text);
+        //Prueba2.text = PlayerPrefs.GetString("Career", Career.text);
+
+        //VisibleP1.SetActive(true);
+        //VisibleP2.SetActive(true);
+    }
+
     private void Update()
     {   
         //Si es menor el texto a un caracter no se activara el juego
@@ -96,9 +113,11 @@ public class MainPanel : MonoBehaviour
     //---------------------------------------
     public void ChangeScene(string sceneName)
     {
-        PlayerPrefs.SetString("NamePLayer", NombrePlayer.text);
-        PlayerPrefs.SetString("Career", Career.text); 
         SceneManager.LoadScene(sceneName);
+
+        ////activar depúes de la prueba
+        PlayerPrefs.SetString("NamePLayer", NombrePlayer.text);
+        PlayerPrefs.SetString("Career", Career.text);
     }
 
     //---------------------------------------
