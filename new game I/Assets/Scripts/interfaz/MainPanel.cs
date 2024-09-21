@@ -8,10 +8,10 @@ using TMPro;
 
 public class MainPanel : MonoBehaviour
 {
-    //public TMP_Text Prueba1;
-    //public TMP_Text Prueba2;
-    //public GameObject VisibleP1;
-    //public GameObject VisibleP2;
+    public TMP_Text Prueba1;
+    public TMP_Text Prueba2;
+    public GameObject VisibleP1;
+    public GameObject VisibleP2;
 
     //--------------------------
     [Header("Ajustes")]
@@ -29,7 +29,7 @@ public class MainPanel : MonoBehaviour
     public GameObject mainPanel;
     public GameObject ajustesPanel;
     public GameObject CustomizacionPanel;
-
+    public GameObject ControlesPanel;
 
     //------------------------
     [Header("Customización")]
@@ -47,18 +47,6 @@ public class MainPanel : MonoBehaviour
         VolumenFX.onValueChanged.AddListener(ChangeVolumenFX);
         volumenMaster.onValueChanged.AddListener(ChangeVolumenmaster);
 
-        // Cargar el nombre guardado (si es que existe uno)
-        if (PlayerPrefs.HasKey("NamePLayer"))
-        {
-            TextaNema.text = PlayerPrefs.GetString("NamePLayer");
-        }
-
-        // Cargar la carrera (si es que existe uno)
-        if (PlayerPrefs.HasKey("Career"))
-        {
-            TextCarrera.text = PlayerPrefs.GetString("Career");
-        }
-
         LoadVolumeSettings();
     }
 
@@ -66,24 +54,22 @@ public class MainPanel : MonoBehaviour
     {
 
         PlayerPrefs.SetString("NamePLayer", NombrePlayer.text);
-        PlayerPrefs.SetString("Career", Career.text);     
+        PlayerPrefs.SetString("Career", Career.text);
 
-        //Prueba1.text = PlayerPrefs.GetString("NamePLayer", NombrePlayer.text);
-        //Prueba2.text = PlayerPrefs.GetString("Career", Career.text);
+        Prueba1.text = PlayerPrefs.GetString("NamePLayer", NombrePlayer.text);
+        Prueba2.text = PlayerPrefs.GetString("Career", Career.text);
 
-        //VisibleP1.SetActive(true);
-        //VisibleP2.SetActive(true);
+        VisibleP1.SetActive(true);
+        VisibleP2.SetActive(true);        
     }
 
     private void Update()
-    {   
+    {
         //Si es menor el texto a un caracter no se activara el juego
         if (TextaNema.text.Length < 1 && TextCarrera.text.Length < 1)
         {
             BSalir.SetActive(false);
         }
-
-        //Si es mayor el texto a un caracter se activara el juego
         if (TextaNema.text.Length > 1 && TextCarrera.text.Length > 1)
         {
             BSalir.SetActive(true);
@@ -101,7 +87,7 @@ public class MainPanel : MonoBehaviour
         mainPanel.SetActive(false);
         ajustesPanel.SetActive(false);
         CustomizacionPanel.SetActive(false);
-
+        ControlesPanel.SetActive(false);
 
         panel.SetActive(true);
 
@@ -113,7 +99,10 @@ public class MainPanel : MonoBehaviour
     //---------------------------------------
     public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        if (TextaNema.text.Length > 1 && TextCarrera.text.Length > 1)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
 
         ////activar depúes de la prueba
         PlayerPrefs.SetString("NamePLayer", NombrePlayer.text);
@@ -158,6 +147,4 @@ public class MainPanel : MonoBehaviour
             mixer.SetFloat("VolFX", volFX);
         }
     }
-
-
 }
