@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 493639531}
   - component: {fileID: 493639530}
   - component: {fileID: 493639529}
+  - component: {fileID: 493639532}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -594,12 +595,26 @@ Transform:
   m_GameObject: {fileID: 493639528}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &493639532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493639528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f05ec9ac330844383d604587a5daa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minLimit: {x: -10, y: -7}
+  maxLimit: {x: 11, y: 3}
 --- !u!1001 &609226667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -774,10 +789,10 @@ RectTransform:
   - {fileID: 1763002232}
   m_Father: {fileID: 204652972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchorMin: {x: 0, y: 0.10274074}
+  m_AnchorMax: {x: 1, y: 0.287}
+  m_AnchoredPosition: {x: 0, y: -4}
+  m_SizeDelta: {x: -501.64502, y: -1.6622314}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &698132624
 MonoBehaviour:
@@ -792,14 +807,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.38679236, b: 0.38679236, a: 0.09803922}
+  m_Color: {r: 0.66352195, g: 0.9684761, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1354,6 +1369,26 @@ MonoBehaviour:
   necesitaAyuda: 1
   sombrilla: {fileID: 0}
   tazaPrefab: {fileID: 3601419130941240707, guid: 7ef125a58e2d96a4d97f4993a4beb4dd, type: 3}
+  Dialogo: {fileID: 629885860}
+  AikeDialogoSinSombra:
+  - "Jugador: \xBFNecesitas ayuda?"
+  - "Aike: S\xED, por favor, no logro alcanzar mi sombrilla y la necesito para protegerme
+    del sol cuando vaya a mi sal\xF3n."
+  - 'Jugador: Claro, yo te ayudo.'
+  AikeDialogoConSombra:
+  - "Jugador: Aqu\xED tienes"
+  - "Aike: \xA1Muchas gracias! Ahora podr\xE9 salir sin problemas."
+  - 'Jugador: Me alegra haber podido ayudarte.'
+  - "Aike: Ten, es un peque\xF1o obsequio. Note que has estado ayudando al gatito,
+    as\xED que espero que te sea de utilidad."
+  - '*Le entrega una taza en agradecimiento.'
+  - "Jugador: \xA1Oh, una taza! Muchas gracias, ahora ya no tendr\xE9 que hacer dos
+    viajes para poder darle de comer."
+  AikeDialogoConAyuda:
+  - "Aike: \xA1Hey! Es bueno volver a verte; gracias a ti llegu\xE9 a tiempo a mi
+    clase."
+  - "Jugador: No hay de qu\xE9, s\xE9 que habr\xEDas hecho lo mismo por m\xED."
+  - 'Aike:  :)'
 --- !u!61 &812921685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2234,8 +2269,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 25, y: 0}
-  m_SizeDelta: {x: -50, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1763002233
 MonoBehaviour:
@@ -2284,15 +2319,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 66
-  m_fontSizeBase: 66
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

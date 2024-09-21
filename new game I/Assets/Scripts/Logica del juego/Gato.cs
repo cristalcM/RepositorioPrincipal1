@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 public class Gato : MonoBehaviour
 {
@@ -126,7 +127,7 @@ public class Gato : MonoBehaviour
 
     //__________________________________________
     //SUS DIALOGOS 
-    // //_________________________________________
+    //_________________________________________
     [SerializeField, TextArea(4, 6)]
     private string[] gatoDialogoSincomida =
      {
@@ -166,13 +167,13 @@ public class Gato : MonoBehaviour
 
     private string[] gatoDialogoSatisfecho =
     {
-    // Después de dar la primera comida
-        "Gato: Mrauu",
-        "Jugador: Ah ya te ves muy rechoncho, supongo que ya estaa lleno.",
+        // Después de dar la primera comida
+        "Gato: Rrrrrrr",
+        "Jugador: Es bueno ver que estés bien. Nos vemos más tarde."
+,
     };
 
-    //private int currentDialogueIndex = 0;
-    //public Dialogue gatoDialogue;
+
 
 
 }
