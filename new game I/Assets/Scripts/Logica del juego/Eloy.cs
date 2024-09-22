@@ -121,6 +121,7 @@ public class Eloy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             esperandoRespuesta = false;
+            panelPregunta.gameObject.SetActive(false);
         }
     }
 
