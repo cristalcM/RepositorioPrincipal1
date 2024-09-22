@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class Aike : MonoBehaviour
 {
+
     public bool necesitaAyuda = true;
     public GameObject sombrilla;
     public GameObject tazaPrefab;
@@ -74,7 +75,7 @@ public class Aike : MonoBehaviour
         private void CrearTaza()
         {
             Debug.Log("Aike ha dejado una taza.");
-            Instantiate(tazaPrefab, transform.position + new Vector3(1, 0, 0), Quaternion.identity);  // Aparece la taza
+            Instantiate(tazaPrefab, transform.position + new Vector3(3, 0, 0), Quaternion.identity);  // Aparece la taza
         }
 
 

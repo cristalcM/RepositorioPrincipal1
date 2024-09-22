@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
 
     //vareables para gato
     public GameObject gato;
-    private bool tieneComida = false;
     public  bool tieneTaza = false;  // Indica si el jugador tiene la taza
     private bool gatoEnRango = false;
     private bool puedeRecibirTaza = false;
@@ -85,12 +84,7 @@ public class Player : MonoBehaviour
             Debug.Log("Necesitas ir por comida,");
         }
     }
-    // M?todo para verificar si el jugador tiene 
-    //public bool TieneComida()
-    //{
-    //    return t;
-    //}
-    // M?todo que activa la posibilidad de recibir 
+ 
     public void PermitirRecibirComida()
     {
         Debug.Log("Has encontrado comida para el gato.");

@@ -42,49 +42,13 @@ public class Notification : MonoBehaviour
         {
             NotificationTexto.text = NotificationLineas[indiceLineas];  // Actualizar el texto
             indiceLineas++;
-
-            yield return new WaitForSeconds(2f);  // Esperar 2 segundos antes de cambiar al siguiente
         }
 
         // Ocultar el panel cuando se hayan mostrado todas las notificaciones
         NotificationActivo = false;
+        yield return new WaitForSeconds(20f);  // Esperar 2 segundos antes de cambiar al siguiente
         NotificationPanel.SetActive(false);
     }
 }
 
 
-//public class Notification : MonoBehaviour
-//{
-
-//    public GameObject NotificationPanel;
-//    public TMP_Text NotificationTexto;
-
-
-//    private string[] NotificationLineas; //Almacena las Notificaciones.
-//    private int indiceLineas; //LLeva el segimiento de las notificaiones.
-//    private Coroutine currentCourutine;
-//    private bool NotificationActivo;
-
-//    // Start is called before the first frame update
-//    void Start()
-//    {
-
-//    }
-
-//    // Update is called once per frame
-//    void Update()
-//    {
-
-//    }
-
-
-//    public void MostrarNotification(string[] lineas)
-//    {
-//        NotificationLineas = lineas;
-//        indiceLineas = 0;
-//        NotificationPanel.SetActive(true);
-//        NotificationActivo = true;
-
-//        NotificationTexto.text = "aquí aparece que notifica";
-//    }
-//}

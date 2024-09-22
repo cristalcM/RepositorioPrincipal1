@@ -11,7 +11,7 @@ using static UnityEditor.PlayerSettings;
 public class Eloy : MonoBehaviour
 {
     public GameObject player;
-    public Vector2 coordenadasCorrectas = new Vector2(5, 3);  // Coordenadas correctas del edificio E
+    public Vector2 coordenadasCorrectas = new(5, 3);  // Coordenadas correctas del edificio E
     public GameObject llaveroObjeto;  // Llavero que recibirá el jugador
     private bool haRecibidoLlavero = false;
     private bool esperandoRespuesta = false;
@@ -67,7 +67,7 @@ public class Eloy : MonoBehaviour
         // Verificar si las coordenadas son válidas
         if (float.TryParse(inputX.text, out x) && float.TryParse(inputY.text, out y))
         {
-            Vector2 coordenadasIngresadas = new Vector2(x, y);
+            Vector2 coordenadasIngresadas = new(x, y);
             VerificarCoordenadas(coordenadasIngresadas);
         }
         else

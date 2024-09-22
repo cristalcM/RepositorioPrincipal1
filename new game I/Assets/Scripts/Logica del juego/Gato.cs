@@ -9,14 +9,14 @@ public class Gato : MonoBehaviour
     //---------------------------
     public bool tieneHambre = true;
     public GameObject monedaPrefab;
-    public int tiempoParaHambre = 120;
-
+    public int tiempoParaHambre = 30;
+    //public bool ComidaEntregada = false;
 
     //Otras clases.
     public DialogoNPC Dialogo;
     public Notification notification;
 
-    public int tiempoParaEscapar = 240; 
+    public int tiempoParaEscapar = 30; 
    
     //-----------------------------
     //Atributos privados.
@@ -24,7 +24,7 @@ public class Gato : MonoBehaviour
     private int comidaRecibida = 0;
     private bool jugadorEnRango = false;  // Para detectar si el jugador está cerca
     private Player Player;
-    private bool ComidaEntregada = false;
+   
 
     private bool escapando = false;       // Para evitar que se escapen varias veces
 
@@ -77,7 +77,7 @@ public class Gato : MonoBehaviour
     {
         if (tieneHambre == true)
         {
-            ComidaEntregada = true;
+            //ComidaEntregada = true;
             if (jugadorTieneTaza)
             {
                 Debug.Log("El gato está siendo alimentado en un solo viaje.");
@@ -128,6 +128,10 @@ public class Gato : MonoBehaviour
 
     }
 
+    //---------------
+    //tEMPORIZADORES
+    //---------------
+
     private IEnumerator TemporizadorHambre()
     {
         yield return new WaitForSeconds(tiempoParaHambre);
@@ -147,13 +151,19 @@ public class Gato : MonoBehaviour
             Debug.Log("El gato se está escapando...");
         notification.MostrarNotification(notificacion3);
            
-            yield return new WaitForSeconds(2f);  // Espera antes de desaparecer
+            yield return new WaitForSeconds(2);  // Espera antes de desaparecer
             Debug.Log("El gato ha desaparecido.");
         notification.MostrarNotification(notificacion4);
         gameObject.SetActive(false);  // El gato desaparece
         
     }
-
+    //----------------------------------------
+    //Metodo para que michi nunca desaparezca
+    //----------------------------------------
+    public void Inmune()
+    {
+        tiempoParaEscapar = 40000000;
+    }
 
 
     //__________________________________________
