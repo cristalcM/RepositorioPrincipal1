@@ -11,7 +11,7 @@ public class Notification : MonoBehaviour
     private string[] NotificationLineas;  // Almacena las líneas de notificación
     private int indiceLineas;  // Lleva el seguimiento de la línea actual
     private Coroutine currentCourutine;  // Corrutina para cambiar el texto
-    private bool NotificationActivo;  // Indica si las notificaciones están activas
+   
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class Notification : MonoBehaviour
         NotificationLineas = lineas;
         indiceLineas = 0;
         NotificationPanel.SetActive(true);  // Mostrar el panel
-        NotificationActivo = true;
+        
 
         // Si ya hay una corrutina en ejecución, detenerla antes de iniciar una nueva
         if (currentCourutine != null)
@@ -44,8 +44,6 @@ public class Notification : MonoBehaviour
             indiceLineas++;
         }
 
-        // Ocultar el panel cuando se hayan mostrado todas las notificaciones
-        NotificationActivo = false;
         yield return new WaitForSeconds(20f);  // Esperar 2 segundos antes de cambiar al siguiente
         NotificationPanel.SetActive(false);
     }

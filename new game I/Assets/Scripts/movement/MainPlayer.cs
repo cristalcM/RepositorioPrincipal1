@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class MainPlayer : MonoBehaviour
 {
-    private float velocidad = 4f;
+    public  float velocidad = 4f;
     private Vector3 posicionDobjetivo;
     private bool hasNewClick = false; // Nuevo clic
     private GameObject objetoAgarrado = null; // Referencia al objeto agarrado
@@ -133,6 +133,16 @@ public class MainPlayer : MonoBehaviour
             objetoAgarrado.transform.SetParent(null);
             objetoAgarrado = null;
         }
+    }
+
+
+    //------------------------------
+    //metodo para darle potenciacion ap personaje
+    //-----------------------------------
+
+    public void PowerOp()
+    {
+        velocidad = 6;
     }
 
     private void OnDrawGizmosSelected()

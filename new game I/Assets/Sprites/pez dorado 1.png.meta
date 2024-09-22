@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: f339b82d09becee419748832c3e19980
+guid: 74318beba1731e44bb8756963626b61e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 873322311549498041
-    second: pez dorado_0
+      213: 7637283632693946655
+    second: pez dorado 1_0
   - first:
-      213: -3527039465119394869
-    second: pez dorado_1
+      213: -5591141448919170596
+    second: pez dorado 1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pez dorado_0
+      name: pez dorado 1_0
       rect:
         serializedVersion: 2
         x: 1406
@@ -117,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b2b45ae30aae1c00800000000000000
-      internalID: 873322311549498041
+      spriteID: f19a0a7fff41df960800000000000000
+      internalID: 7637283632693946655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez dorado_1
+      name: pez dorado 1_1
       rect:
         serializedVersion: 2
         x: 811
@@ -138,8 +138,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc356c42b407d0fc0800000000000000
-      internalID: -3527039465119394869
+      spriteID: cd1c530b9764862b0800000000000000
+      internalID: -5591141448919170596
       vertices: []
       indices: 
       edges: []

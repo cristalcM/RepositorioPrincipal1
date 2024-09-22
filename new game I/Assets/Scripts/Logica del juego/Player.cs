@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
         return tieneSombrilla;
     }
 
-
+  
 
    
     //---------------------------------------------
@@ -194,6 +194,9 @@ public class Player : MonoBehaviour
         puedeRecibirllavero = true;
         Debug.Log("Ahora puedes recoger el llavero.");
     }
+
+
+
 
     //________________
     // Coliciones
