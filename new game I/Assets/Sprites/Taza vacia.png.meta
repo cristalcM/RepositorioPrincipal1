@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Taza vacia_0: 1563955293075339628
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
