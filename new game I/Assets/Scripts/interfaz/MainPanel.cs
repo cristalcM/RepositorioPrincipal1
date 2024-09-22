@@ -147,4 +147,12 @@ public class MainPanel : MonoBehaviour
             mixer.SetFloat("VolFX", volFX);
         }
     }
+
+    //---------------------------------------
+    //Método para salir del juego
+    //---------------------------------------
+    public void SalirJuego()
+    {
+        Application.Quit();
+    }
 }

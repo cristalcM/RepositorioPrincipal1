@@ -154,7 +154,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pez dorado 1_0: 7637283632693946655
+      pez dorado 1_1: -5591141448919170596
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
