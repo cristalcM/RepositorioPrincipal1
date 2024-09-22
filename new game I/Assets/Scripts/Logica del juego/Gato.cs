@@ -129,6 +129,7 @@ public class Gato : MonoBehaviour
         yield return new WaitForSeconds(tiempoParaHambre);
         tieneHambre = true;
         Debug.Log("El gato tiene hambre nuevamente.");
+
         StartCoroutine(TemporizadorEscape());
 
     }
