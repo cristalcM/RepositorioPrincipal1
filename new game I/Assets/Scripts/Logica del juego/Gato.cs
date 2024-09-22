@@ -9,9 +9,12 @@ public class Gato : MonoBehaviour
     //---------------------------
     public bool tieneHambre = true;
     public GameObject monedaPrefab;
-    public float tiempoParaHambre = 60f;
+    public int tiempoParaHambre = 120;
 
     public DialogoNPC Dialogo;
+
+    public int tiempoParaEscapar = 240; 
+   
     //-----------------------------
     //Atributos privados.
     //---------------------------
@@ -19,12 +22,16 @@ public class Gato : MonoBehaviour
     private bool jugadorEnRango = false;  // Para detectar si el jugador está cerca
     private Player Player;
     private bool ComidaEntregada = false;
+
+    private bool escapando = false;       // Para evitar que se escapen varias veces
+
+
     private void Update()
     {
         if (jugadorEnRango && Input.GetKeyDown(KeyCode.E))  // Si el jugador está en rango y presiona E
         {
             Player = FindFirstObjectByType<Player>();
-            if (Player != null && Player.TieneComida())  // Solo dar comida si el jugador tiene comida
+            if (Player != null && Player.croquetas > 0)  // Solo dar comida si el jugador tiene comida
             {
                 DarComida(Player.TieneTaza());  // Llama a DarComida si el jugador está cerca y tiene comida
                 Player.RecibirTaza();  // Después de dar comida, el jugador pierde su comida
@@ -106,12 +113,15 @@ public class Gato : MonoBehaviour
         comidaRecibida = 0;
         DarRecompensa();
         StartCoroutine(TemporizadorHambre());
+
+
     }
 
     private void DarRecompensa()
     {
         Debug.Log("El gato te ha dado una moneda.");
         Instantiate(monedaPrefab, transform.position + new Vector3(0, -2, 0), Quaternion.identity);
+
     }
 
     private IEnumerator TemporizadorHambre()
@@ -119,9 +129,23 @@ public class Gato : MonoBehaviour
         yield return new WaitForSeconds(tiempoParaHambre);
         tieneHambre = true;
         Debug.Log("El gato tiene hambre nuevamente.");
+        StartCoroutine(TemporizadorEscape());
+
     }
 
+    private IEnumerator TemporizadorEscape()
+    {
+        yield return new WaitForSeconds(tiempoParaEscapar);
 
+       
+            escapando = true;
+            Debug.Log("El gato se está escapando...");
+           
+            yield return new WaitForSeconds(2f);  // Espera antes de desaparecer
+            Debug.Log("El gato ha desaparecido.");
+            gameObject.SetActive(false);  // El gato desaparece
+        
+    }
 
 
 

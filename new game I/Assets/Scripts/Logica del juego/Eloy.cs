@@ -63,7 +63,7 @@ public class Eloy : MonoBehaviour
     {
         // Obtener las coordenadas ingresadas por el jugador
         float x, y;
-        Dialogo.MostrarDialogo(EloydialogoEsperando);
+        
         // Verificar si las coordenadas son válidas
         if (float.TryParse(inputX.text, out x) && float.TryParse(inputY.text, out y))
         {
@@ -132,16 +132,12 @@ public class Eloy : MonoBehaviour
     [SerializeField, TextArea(4, 6)]
     private string[] EloyDialogoSinAyuda =
     {
-       "Eloy: ¡Oye, asere! Soy de intercambio y no entiendo el mapa del CUC. ¿Sabes cuáles son las coordenadas del edificio E?"
-
+       "Eloy: ¡Oye, asere! Soy de intercambio y no entiendo el mapa del CUC. ¿Sabes cuáles son las coordenadas del edificio E?",
+       "Jugador: ammm las cordenadas son..."
 
     };
-    [SerializeField, TextArea(4, 6)]
-    private string[] EloydialogoEsperando =
-   {
+  
     
-        "Jugador: ammm las cordenadas son...",
-    };
     [SerializeField, TextArea(4, 6)]
     private string[] EloyDialogoConAyuda =
     {

@@ -22,8 +22,12 @@ public class Player : MonoBehaviour
     private bool Tienellavero;
 
 
+    public Inventario Inventario;
+    public int croquetas;
+
     void Update()
     {
+        
 
 
         if (Input.GetKeyDown(KeyCode.E) && gatoEnRango) // Tecla para interactuar
@@ -37,6 +41,7 @@ public class Player : MonoBehaviour
 
         }
     }
+    
 
     //--------------------------------------
     //Metodos para gato
@@ -44,14 +49,19 @@ public class Player : MonoBehaviour
 
     void InteractuarConGato()
     {
+        
+        croquetas = Inventario.croquetas;
+        
+
         Gato gatoScript = gato.GetComponent<Gato>();
 
-        if (gatoScript.tieneHambre && tieneComida)
+        if (gatoScript.tieneHambre && croquetas > 0)
         {
             gatoScript.DarComida(tieneTaza);  // Pasamos si el jugador tiene la taza
-            tieneComida = false;  // Resetear después de alimentar
+            Inventario.RestrarCroq();
+
         }
-        else if (!tieneComida)
+        else if (croquetas <= 0)
         {
             Debug.Log("Necesito encontrar comida primero.");
             
@@ -66,7 +76,7 @@ public class Player : MonoBehaviour
     {
         if (puedeRecibirComida)
         {
-            tieneComida = true;
+          
             Debug.Log("Dale la comida a bigotes");
             puedeRecibirComida = false;  // Despu?s de recibirla, no puede recibirla de nuevo
         }
@@ -76,15 +86,15 @@ public class Player : MonoBehaviour
         }
     }
     // M?todo para verificar si el jugador tiene 
-    public bool TieneComida()
-    {
-        return tieneComida;
-    }
+    //public bool TieneComida()
+    //{
+    //    return t;
+    //}
     // M?todo que activa la posibilidad de recibir 
     public void PermitirRecibirComida()
     {
         Debug.Log("Has encontrado comida para el gato.");
-        tieneComida = true;
+       
         puedeRecibirComida = true;
         Debug.Log("Ahora puedes recoger comida.");
     }

@@ -16,7 +16,12 @@ public class Inventario : MonoBehaviour
     public void RecogerCroq()
     {
         croquetas++;
-        Debug.Log("Tienes " + monedas + " monedas.");
+        Debug.Log("Tienes " + monedas + " croquetas.");
+    }
+   public void RestrarCroq()
+    {
+        croquetas--;
+        Debug.Log("Tienes " + monedas + " croquetas.");
     }
 }
 

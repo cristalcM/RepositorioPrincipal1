@@ -172,15 +172,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.9970385, g: 0.6949685, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1732,12 +1732,10 @@ MonoBehaviour:
   enviarButton: {fileID: 238013778}
   Dialogo: {fileID: 629885860}
   panelPregunta: {fileID: 113262045}
-  dialogoTexto: {fileID: 0}
   EloyDialogoSinAyuda:
   - "Eloy: \xA1Oye, asere! Soy de intercambio y no entiendo el mapa del CUC. \xBFSabes
     cu\xE1les son las coordenadas del edificio E?"
-  EloydialogoEsperando:
-  - 'Jugador: ammm las cordenadas son...'
+  - ' "Jugador: ammm las cordenadas son..."'
   EloyDialogoConAyuda:
   - "Eloy: \xA1Gracias, asere! Te tengo un regalito."
   - '*le entrega un llavero.'
@@ -3178,6 +3176,8 @@ MonoBehaviour:
   tieneTaza: 0
   aike: {fileID: 812921679}
   sombrillaPrefab: {fileID: 6240329818299014899, guid: 79753b59b6566024c83db5f07766547a, type: 3}
+  Inventario: {fileID: 1763641652}
+  croquetas: 0
 --- !u!60 &1682838535
 PolygonCollider2D:
   m_ObjectHideFlags: 0
