@@ -16,7 +16,7 @@ public class DialogosconNPC : MonoBehaviour
     [SerializeField] private TMP_Text DialogoText;
     //el tiempo en que se escriben las palabras letra por letra.
     private float typinigTime = 0.05f;
-    private bool DidDialogueStart;
+    //private bool DidDialogueStart;
     private int LineIndex;
 
     [SerializeField, TextArea(4, 6)]
@@ -48,7 +48,7 @@ public class DialogosconNPC : MonoBehaviour
     //Inicia el dialogo desde el principio
     private void StartDialogue()
     {
-        DidDialogueStart = true;
+        //DidDialogueStart = true;
         DialogoPanel.SetActive(true);
         DialogoMark.SetActive(false);
         LineIndex = 0;
@@ -66,7 +66,7 @@ public class DialogosconNPC : MonoBehaviour
         }
         else
         {
-            DidDialogueStart = false;
+            //DidDialogueStart = false;
             DialogoPanel.SetActive(false);
             DialogoMark.SetActive(true);
             Time.timeScale = 1f;

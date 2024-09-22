@@ -26,7 +26,7 @@ public class Gato : MonoBehaviour
     private Player Player;
    
 
-    private bool escapando = false;       // Para evitar que se escapen varias veces
+  
 
 
     private void Update()
@@ -147,7 +147,7 @@ public class Gato : MonoBehaviour
         yield return new WaitForSeconds(tiempoParaEscapar);
 
        
-            escapando = true;
+           
             Debug.Log("El gato se está escapando...");
         notification.MostrarNotification(notificacion3);
            
