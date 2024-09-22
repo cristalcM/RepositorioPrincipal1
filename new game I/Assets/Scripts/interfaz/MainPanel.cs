@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using TMPro;
+using static System.Net.Mime.MediaTypeNames;
 
 public class MainPanel : MonoBehaviour
 {
@@ -50,17 +51,33 @@ public class MainPanel : MonoBehaviour
         LoadVolumeSettings();
     }
 
+
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("NamePLayer"))
+        {
+            TextaNema.text = PlayerPrefs.GetString("NamePLayer");
+            NombrePlayer.text = TextaNema.text;
+        }
+
+        if (PlayerPrefs.HasKey("Career"))
+        {
+            TextCarrera.text = PlayerPrefs.GetString("Career");
+            Career.text = TextCarrera.text;
+        }
+    }
+
     public void UpdateInfo()
     {
 
         PlayerPrefs.SetString("NamePLayer", NombrePlayer.text);
         PlayerPrefs.SetString("Career", Career.text);
 
-        Prueba1.text = PlayerPrefs.GetString("NamePLayer", NombrePlayer.text);
-        Prueba2.text = PlayerPrefs.GetString("Career", Career.text);
+        //Prueba1.text = PlayerPrefs.GetString("NamePLayer", NombrePlayer.text);
+        //Prueba2.text = PlayerPrefs.GetString("Career", Career.text);
 
-        VisibleP1.SetActive(true);
-        VisibleP2.SetActive(true);        
+        //VisibleP1.SetActive(true);
+        //VisibleP2.SetActive(true);        
     }
 
     private void Update()
@@ -153,6 +170,6 @@ public class MainPanel : MonoBehaviour
     //---------------------------------------
     public void SalirJuego()
     {
-        Application.Quit();
+        //Application.Quit();
     }
 }
