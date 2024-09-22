@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      quisco2_0: -8469331638430540638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

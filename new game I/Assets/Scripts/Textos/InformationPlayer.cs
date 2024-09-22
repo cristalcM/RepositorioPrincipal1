@@ -57,9 +57,9 @@ public class InformationPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextComida.text = "Croquetas obtenidas: " + croquetas;
-        TextComida.text = "Monedas obtenidas: " + monedas;
-        TextComida.text = "Piezas obtenidas: " + piezas;
+        TextComida.text = "Croquetas: " + croquetas;
+        TextComida.text = "Monedas: " + monedas;
+        TextComida.text = "Piezas: " + piezas;
     }
 
     public void ChangeScene(string sceneName)
