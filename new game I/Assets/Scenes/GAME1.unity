@@ -606,8 +606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5481e9e50f5d6ed42aec0448d49faadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NotificationPanel: {fileID: 0}
-  NotificationTexto: {fileID: 0}
+  NotificationPanel: {fileID: 832326166}
+  NotificationTexto: {fileID: 1024929400}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
