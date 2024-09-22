@@ -5300,6 +5300,16 @@ MonoBehaviour:
   doroteoAnimator: {fileID: 1938853724}
   botas: {fileID: 8477526001408215731, guid: 8c150087a73d29f4a9282957dfe17a55, type: 3}
   distanciaInteraccion: 2
+  Dialogo: {fileID: 629885860}
+  notification: {fileID: 227173013}
+  DoroteoDialogoSinAyuda:
+  - 'Doroteo: GRRUUH'
+  - "Jugador: d\xE9jame echarte una mano."
+  DoroteoDialogoConAyuda:
+  - '*le da las botas*'
+  - "Jugador: \xA1Wow! Estas botas me ser\xE1n muy \xFAtiles. \xA1Gracias, Doroteo!"
+  - 'Doroteo: mmmmm (nuevamente gracias)'
+  - 'Jugado: no hay de que amiguito.'
 --- !u!61 &1938853726
 BoxCollider2D:
   m_ObjectHideFlags: 0

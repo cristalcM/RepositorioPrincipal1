@@ -1,5 +1,8 @@
+using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -13,7 +16,10 @@ public class Tortuga : MonoBehaviour
     private bool jugadorEnRango = false;  // Verifica si el jugador está cerca
     private bool yaEntregoBotas = false;  // Asegura que solo entregue las botas una vez
 
-   
+
+    //Otras clases.
+    public DialogoNPC Dialogo;
+    public Notification notification;
 
     void Update()
     {
@@ -25,11 +31,19 @@ public class Tortuga : MonoBehaviour
 
     void InteractuarConDoroteo()
     {
+       
         if (estaVolteada)
         {
+            Dialogo.MostrarDialogo(DoroteoDialogoSinAyuda);
             // Si Doroteo está volteado, inicia la animación de "desvoltear"
             VoltearDoroteo();
+           
         }
+        else if (yaEntregoBotas == false)
+        {
+            DialogodeAgradecimiento();
+        }
+
         else
         {
             // Si ya está desvolteado, muestra el diálogo de la segunda interacción
@@ -44,28 +58,37 @@ public class Tortuga : MonoBehaviour
         // Activa la animación de desvoltear
         doroteoAnimator.SetTrigger("isDesvolteando");
 
-        // Después de que se desvoltea, entrega las botas si no lo ha hecho aún
-        if (!yaEntregoBotas)
-        {
-           DarRecompensa();
-        }
+        
     }
 
 
     private void DarRecompensa()
     {
         Debug.Log("El gato te ha dado una moneda.");
+        yaEntregoBotas = true;
       
         Instantiate(botas, transform.position + new Vector3(0, -2, 0), Quaternion.identity);
 
         //Mostrar el diálogo de agradecimiento
             Debug.Log("Doroteo: ¡Gracias por ayudarme! Aquí tienes unas botas.");
+
     }
-    
+
 
     void MostrarDialogoSegundaInteraccion()
     {
         Debug.Log("Doroteo: Grah... (Gracias nuevamente).");
+        Dialogo.MostrarDialogo(DoroteoDialogofinal);
+    }
+
+    void DialogodeAgradecimiento()
+    {
+        // Después de que se desvoltea, entrega las botas si no lo ha hecho aún
+        if (!yaEntregoBotas)
+        {
+            DarRecompensa();
+        }
+        Dialogo.MostrarDialogo(DoroteoDialogoConAyuda);
     }
 
     // Detecta si el jugador está en rango
@@ -87,4 +110,30 @@ public class Tortuga : MonoBehaviour
             Debug.Log("Jugador se alejó de Doroteo.");
         }
     }
+
+
+    //__________________________________________
+    //SUS DIALOGOS 
+    //_________________________________________
+    [SerializeField, TextArea(4, 6)]
+    private string[] DoroteoDialogoSinAyuda =
+     {
+        "Doroteo: GRRUUH",
+        "Jugador: déjame echarte una mano."
+    };
+    [SerializeField, TextArea(4, 6)]
+    private string[] DoroteoDialogoConAyuda =
+    {
+       "*le da las botas*",
+       "Jugador: ¡Wow! Estas botas me serán muy útiles. ¡Gracias, Doroteo!",
+        "Doroteo: mmmmm (nuevamente gracias)",
+        "Jugado: no hay de que amiguito."
+
+    };
+
+    private string[] DoroteoDialogofinal =
+   {
+        "Doroteo: Grah... (Gracias)",
+        "Jugador: No hay de qué amiguito.",
+    };
 }
