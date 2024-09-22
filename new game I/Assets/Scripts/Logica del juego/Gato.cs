@@ -11,7 +11,10 @@ public class Gato : MonoBehaviour
     public GameObject monedaPrefab;
     public int tiempoParaHambre = 120;
 
+
+    //Otras clases.
     public DialogoNPC Dialogo;
+    public Notification notification;
 
     public int tiempoParaEscapar = 240; 
    
@@ -120,6 +123,7 @@ public class Gato : MonoBehaviour
     private void DarRecompensa()
     {
         Debug.Log("El gato te ha dado una moneda.");
+        notification.MostrarNotification(notificacion2);
         Instantiate(monedaPrefab, transform.position + new Vector3(0, -2, 0), Quaternion.identity);
 
     }
@@ -129,7 +133,7 @@ public class Gato : MonoBehaviour
         yield return new WaitForSeconds(tiempoParaHambre);
         tieneHambre = true;
         Debug.Log("El gato tiene hambre nuevamente.");
-
+        notification.MostrarNotification(notificacion1);
         StartCoroutine(TemporizadorEscape());
 
     }
@@ -141,10 +145,12 @@ public class Gato : MonoBehaviour
        
             escapando = true;
             Debug.Log("El gato se está escapando...");
+        notification.MostrarNotification(notificacion3);
            
             yield return new WaitForSeconds(2f);  // Espera antes de desaparecer
             Debug.Log("El gato ha desaparecido.");
-            gameObject.SetActive(false);  // El gato desaparece
+        notification.MostrarNotification(notificacion4);
+        gameObject.SetActive(false);  // El gato desaparece
         
     }
 
@@ -196,6 +202,31 @@ public class Gato : MonoBehaviour
         "Gato: Rrrrrrr",
         "Jugador: Es bueno ver que estés bien. Nos vemos más tarde."
 ,
+    };
+
+
+    //--------------------------
+    //Notificaciones
+    //___________________
+
+    private string[]  notificacion1 =
+   {
+      "Bigotes tiene hambre, aliméntalo antes de que se escape"
+    };
+    private string[] notificacion2 =
+   {
+      "Bigotes te ah dado una moneda"
+    };
+
+    private string[] notificacion3 =
+  {
+      "Bigotes se esta escapando"
+    };
+
+
+    private string[] notificacion4 =
+  {
+      "Bigotes fue a buscar comida, volverá... pronto...                Quizas"
     };
 
 

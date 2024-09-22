@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 1733498336}
   - component: {fileID: 1733498340}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Notificaciones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -606,8 +606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5481e9e50f5d6ed42aec0448d49faadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogoPanel: {fileID: 832326166}
-  DialogoTexto: {fileID: 1024929400}
+  NotificationPanel: {fileID: 0}
+  NotificationTexto: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
