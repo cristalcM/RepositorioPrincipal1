@@ -5,9 +5,13 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.UI;
 
 public class Tortuga : MonoBehaviour
 {
+    static Text TextNombre;
+    static Text TextCarrera;
+
     public Animator doroteoAnimator;   // Asigna el Animator de Doroteo
     public GameObject botas;           // Botas que recibirá el jugador
     public float distanciaInteraccion = 2f;  // Distancia mínima para interactuar
@@ -15,7 +19,6 @@ public class Tortuga : MonoBehaviour
     private bool estaVolteada = true;  // Doroteo empieza volteada
     private bool jugadorEnRango = false;  // Verifica si el jugador está cerca
     private bool yaEntregoBotas = false;  // Asegura que solo entregue las botas una vez
-
 
     //Otras clases.
     public DialogoNPC Dialogo;
@@ -27,6 +30,27 @@ public class Tortuga : MonoBehaviour
         {
             InteractuarConDoroteo();
         }
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("NamePLayer"))
+        {
+            string playerName = PlayerPrefs.GetString("NamePLayer");
+            // Aquí puedes usar "playerName" en tus diálogos o donde sea necesario
+            Debug.Log("Se busca nombre");
+        }
+
+        if (PlayerPrefs.HasKey("Career"))
+        {
+            string playerCareer = PlayerPrefs.GetString("Career");
+            // Aquí puedes usar "playerCareer" en tus diálogos o donde sea necesario
+            Debug.Log("Se busca carrera");
+        }
+
+        TextNombre.text = PlayerPrefs.GetString("NamePLayer");
+        TextCarrera.text = PlayerPrefs.GetString("Career");
+
     }
 
     void InteractuarConDoroteo()
@@ -125,15 +149,15 @@ public class Tortuga : MonoBehaviour
     private string[] DoroteoDialogoConAyuda =
     {
        "*le da las botas*",
-       "Jugador: ¡Wow! Estas botas me serán muy útiles. ¡Gracias, Doroteo!",
-        "Doroteo: mmmmm (nuevamente gracias)",
-        "Jugado: no hay de que amiguito."
+       TextNombre +": ¡Wow! Estas botas me serán muy útiles. ¡Gracias, Doroteo!",
+       "Doroteo: mmmmm (nuevamente gracias)",
+       TextNombre +": no hay de que amiguito."
 
     };
 
     private string[] DoroteoDialogofinal =
    {
         "Doroteo: Grah... (Gracias)",
-        "Jugador: No hay de qué amiguito.",
+        TextNombre +": No hay de qué amiguito.",
     };
 }

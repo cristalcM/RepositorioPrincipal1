@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.ConstrainedExecution;
 using UnityEngine;
+using UnityEngine.UI;
 public class Gato : MonoBehaviour
 {
+    static Text TextNombre;
+    static Text TextCarrera;
+
     //-----------------------------
     //Atributos publicos.
     //---------------------------
@@ -24,9 +28,30 @@ public class Gato : MonoBehaviour
     private int comidaRecibida = 0;
     private bool jugadorEnRango = false;  // Para detectar si el jugador está cerca
     private Player Player;
-   
 
-  
+
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("NamePLayer"))
+        {
+            string playerName = PlayerPrefs.GetString("NamePLayer");
+            // Aquí puedes usar "playerName" en tus diálogos o donde sea necesario
+            Debug.Log("Se busca nombre");
+        }
+
+        if (PlayerPrefs.HasKey("Career"))
+        {
+            string playerCareer = PlayerPrefs.GetString("Career");
+            // Aquí puedes usar "playerCareer" en tus diálogos o donde sea necesario
+            Debug.Log("Se busca carrera");
+        }
+
+        TextNombre.text = PlayerPrefs.GetString("NamePLayer");
+        TextCarrera.text = PlayerPrefs.GetString("Career");
+
+    }
+
 
 
     private void Update()
@@ -173,9 +198,9 @@ public class Gato : MonoBehaviour
     private string[] gatoDialogoSincomida =
      {
         "Gato: ¡MIAUURR!",
-        "Jugador: ¿Te encuentras bien, amiguito?",
+        TextNombre +": ¿Te encuentras bien, amiguito?",
         "Gato: MRAUU",
-        "Jugador: Mmm… pareces tener hambre, déjame buscarte algo de comer.",
+        TextNombre +": Mmm… pareces tener hambre, déjame buscarte algo de comer.",
 
 
     };
@@ -183,26 +208,26 @@ public class Gato : MonoBehaviour
     private string[] gatoDialogoContaza =
    {
     // Después de dar la primera comida
-        "Jugador: Aquí tienes.",
+        TextNombre +": Aquí tienes.",
         "Gato: Mrauu",
-        "Jugador: Me alegra que fuera suficiente.",
+        TextNombre +": Me alegra que fuera suficiente.",
     };
     [SerializeField, TextArea(4, 6)]
     private string[] gatoDialogoConcomida =
     {
     // Después de dar la primera comida
-        "Jugador: Aquí tienes.",
+        TextNombre +": Aquí tienes.",
         "Gato: Mrauu",
-        "Jugador: Parece que aún tienes hambre, supongo que tendré que traerte un poco más.",
+        TextNombre +": Parece que aún tienes hambre, supongo que tendré que traerte un poco más.",
     };
     [SerializeField, TextArea(4, 6)]
     private string[] gatoDialogoFinal =
    {
      // Después de la segunda comida
-        "Jugador: Ahora sí, provecho Bigotes.",
+        TextNombre +": Ahora sí, provecho Bigotes.",
         "Gato: Miau",
         "*El gato le da una moneda en agradecimiento.*",
-        "Jugador: Gracias amigo, regresaré a visitarte más tarde por si vuelves a tener hambre.",
+        TextNombre +": Gracias amigo, regresaré a visitarte más tarde por si vuelves a tener hambre.",
         "Gato: ¡Miau!"
     };
 
@@ -210,7 +235,7 @@ public class Gato : MonoBehaviour
     {
         // Después de dar la primera comida
         "Gato: Rrrrrrr",
-        "Jugador: Es bueno ver que estés bien. Nos vemos más tarde."
+        TextNombre +": Es bueno ver que estés bien. Nos vemos más tarde."
 ,
     };
 

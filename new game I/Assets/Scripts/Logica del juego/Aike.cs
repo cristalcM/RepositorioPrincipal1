@@ -1,10 +1,12 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Aike : MonoBehaviour
 {
@@ -15,6 +17,9 @@ public class Aike : MonoBehaviour
     private bool jugadorEnRango = false;  // Para detectar si el jugador está cerca
     public DialogoNPC Dialogo;
 
+    static Text TextNombre;
+    static Text TextCarrera;
+
     private void Update()
     {
         if (jugadorEnRango && Input.GetKeyDown(KeyCode.E)) // Si el jugador está en rango y presiona E
@@ -23,6 +28,27 @@ public class Aike : MonoBehaviour
             DarSombrilla(player.TieneSombra());  // Llama a DarSomvrilla si el jugador está cerca
             
         }
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("NamePLayer"))
+        {
+            string playerName = PlayerPrefs.GetString("NamePLayer");
+            // Aquí puedes usar "playerName" en tus diálogos o donde sea necesario
+            Debug.Log("Se busca nombre");
+        }
+
+        if (PlayerPrefs.HasKey("Career"))
+        {
+            string playerCareer = PlayerPrefs.GetString("Career");
+            // Aquí puedes usar "playerCareer" en tus diálogos o donde sea necesario
+            Debug.Log("Se busca carrera");
+        }
+
+        TextNombre.text = PlayerPrefs.GetString("NamePLayer");
+        TextCarrera.text = PlayerPrefs.GetString("Career");
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -86,27 +112,27 @@ public class Aike : MonoBehaviour
     [SerializeField, TextArea(4, 6)]
     private string[] AikeDialogoSinSombra =
     {
-        "Jugador: ¿Necesitas ayuda?",
+        TextNombre + ": ¿Necesitas ayuda?",
         "Aike: Sí, por favor, no logro alcanzar mi sombrilla y la necesito para protegerme del sol cuando vaya a mi salón.",
-        "Jugador: Claro, yo te ayudo."
+        TextNombre + ": Claro, yo te ayudo."
     };
 
     [SerializeField, TextArea(4, 6)]
     private string[] AikeDialogoConSombra=
-    { 
-       "Jugador: Aquí tienes",
+    {
+       TextNombre + ": Aquí tienes",
        "Aike: ¡Muchas gracias! Ahora podré salir sin problemas.",
-       "Jugador: Me alegra haber podido ayudarte.",
+       TextNombre + ": Me alegra haber podido ayudarte.",
        "Aike: Ten, es un pequeño obsequio. Note que has estado ayudando al gatito, así que espero que te sea de utilidad.",
        "*Le entrega una taza en agradecimiento.",
-       "Jugador: ¡Oh, una taza! Muchas gracias, ahora ya no tendré que hacer dos viajes para poder darle de comer."
+       TextNombre + ": ¡Oh, una taza! Muchas gracias, ahora ya no tendré que hacer dos viajes para poder darle de comer."
     };
 
     [SerializeField, TextArea(4, 6)]
     private string[] AikeDialogoConAyuda =
     {
        "Aike: ¡Hey! Es bueno volver a verte; gracias a ti llegué a tiempo a mi clase.",
-       "Jugador: No hay de qué, sé que habrías hecho lo mismo por mí.",
+       TextNombre + ": No hay de qué, sé que habrías hecho lo mismo por mí.",
        "Aike:  :)"
     };
 

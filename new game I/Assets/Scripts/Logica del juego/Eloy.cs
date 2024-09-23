@@ -22,7 +22,10 @@ public class Eloy : MonoBehaviour
     public Button enviarButton;
     public DialogoNPC Dialogo;
     public GameObject panelPregunta;
-    
+
+    static Text TextNombre;
+    static Text TextCarrera;
+
 
     void Start()
     {
@@ -31,6 +34,23 @@ public class Eloy : MonoBehaviour
 
         // Asignar la función al botón
         enviarButton.onClick.AddListener(EnviarCoordenadas);
+
+        if (PlayerPrefs.HasKey("NamePLayer"))
+        {
+            string playerName = PlayerPrefs.GetString("NamePLayer");
+            // Aquí puedes usar "playerName" en tus diálogos o donde sea necesario
+            Debug.Log("Se busca nombre");
+        }
+
+        if (PlayerPrefs.HasKey("Career"))
+        {
+            string playerCareer = PlayerPrefs.GetString("Career");
+            // Aquí puedes usar "playerCareer" en tus diálogos o donde sea necesario
+            Debug.Log("Se busca carrera");
+        }
+
+        TextNombre.text = PlayerPrefs.GetString("NamePLayer");
+        TextCarrera.text = PlayerPrefs.GetString("Career");
     }
 
     void Update()
@@ -134,7 +154,7 @@ public class Eloy : MonoBehaviour
     private string[] EloyDialogoSinAyuda =
     {
        "Eloy: ¡Oye, asere! Soy de intercambio y no entiendo el mapa del CUC. ¿Sabes cuáles son las coordenadas del edificio E?",
-       "Jugador: ammm las cordenadas son..."
+       TextNombre +": ammm las cordenadas son..."
 
     };
   
@@ -145,9 +165,9 @@ public class Eloy : MonoBehaviour
 
         "Eloy: ¡Gracias, asere! Te tengo un regalito.",
         "*le entrega un llavero.",
-        "Jugador: Está playera esta hermosa, tu trabajo es increíble.",
+        TextNombre +": Está playera esta hermosa, tu trabajo es increíble.",
          "Eloy: Nuevamente, gracias mi asere, nos vemos.",
-        "Jugador: ¡Adiós!",
+        TextNombre +": ¡Adiós!",
 
 
     };
@@ -156,7 +176,7 @@ public class Eloy : MonoBehaviour
    {
 
         "Eloy: ¡Asere, ¿qué bolá?! Me alegra ver que uses mi regalo.",
-        "Jugador: Me alegra verte. ¿Y cómo no usarla si tu trabajo es magnífico?"
+        TextNombre +": Me alegra verte. ¿Y cómo no usarla si tu trabajo es magnífico?"
     };
 
    
