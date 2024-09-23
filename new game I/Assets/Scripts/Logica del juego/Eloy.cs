@@ -163,7 +163,7 @@ public class Eloy : MonoBehaviour
     private string[] EloyDialogoSinAyuda =
     {
        "Eloy: ¡Oye, asere! Soy de intercambio y no entiendo el mapa del CUC. ¿Sabes cuáles son las coordenadas del edificio E?",
-       nombre +": ammm las cordenadas son..."
+       "Yo: ammm las cordenadas son..."
 
     };
 
@@ -174,9 +174,9 @@ public class Eloy : MonoBehaviour
 
         "Eloy: ¡Gracias, asere! Te tengo un regalito.",
         "*le entrega un llavero.",
-        nombre +": Está playera esta hermosa, tu trabajo es increíble.",
-         "Eloy: Nuevamente, gracias mi asere, nos vemos.",
-        nombre +": ¡Adiós!",
+        "Yo: Está playera esta hermosa, tu trabajo es increíble.",
+        "Eloy: Nuevamente, gracias mi asere, nos vemos.",
+        "Yo: ¡Adiós!",
 
 
     };
@@ -185,7 +185,7 @@ public class Eloy : MonoBehaviour
    {
 
         "Eloy: ¡Asere, ¿qué bolá?! Me alegra ver que uses mi regalo.",
-        nombre +": Me alegra verte. ¿Y cómo no usarla si tu trabajo es magnífico?"
+        "Yo: Me alegra verte. ¿Y cómo no usarla si tu trabajo es magnífico?"
     };
 
 

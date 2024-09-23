@@ -151,7 +151,7 @@ public class Tortuga : MonoBehaviour
     public string[] DoroteoDialogoConAyuda =
     {
        "*le da las botas*",
-       nombre +": ¡Wow! Estas botas me serán muy útiles. ¡Gracias, Doroteo!",
+       "Yo: ¡Wow! Estas botas me serán muy útiles. ¡Gracias, Doroteo!",
        "Doroteo: mmmmm (nuevamente gracias)",
        nombre +": no hay de que amiguito."
 
@@ -160,6 +160,6 @@ public class Tortuga : MonoBehaviour
    public string[] DoroteoDialogofinal =
    {
        "Doroteo: Grah... (Gracias)",
-       nombre +": No hay de qué amiguito.",
+       "Yo: No hay de qué amiguito.",
    };
 }

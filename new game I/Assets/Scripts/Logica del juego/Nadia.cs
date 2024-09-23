@@ -170,14 +170,14 @@ public class Nadia : MonoBehaviour
     [SerializeField, TextArea(4, 6)]
     private string[] NadiaDialogoSinAyuda=
      {
-        nombre + ": Hola, ¿tienes algún problema?",
+        "Yo: Hola, ¿tienes algún problema?",
         "Nadia: Sí, no puedo pasar, hace falta una rampa.",
-        nombre + ": Mmm… voy a buscar una solución. Quizás logre encontrar unas piezas para improvisar una."
+        "Yo: Mmm… voy a buscar una solución. Quizás logre encontrar unas piezas para improvisar una."
     };
     [SerializeField, TextArea(4, 6)]
     private string[] NadiaDialogoRampa =
     {
-        nombre + ": Fue un poco difícil, pero aquí está la rampa."
+        "Yo: Fue un poco difícil, pero aquí está la rampa."
     };
     [SerializeField, TextArea(4, 6)]
     private string[] NadiaDialogoConAYUDA=
@@ -186,7 +186,7 @@ public class Nadia : MonoBehaviour
             "y he notado que Bigotes es bastante activo, especialmente cuando lo alimentas. " +
             "He escuchado que cuando tiene mucha hambre suele desaparecer por un tiempo. No sé mucho de animales, " +
             "pero tal vez este pescado dorado le ayude a quedarse contigo por más tiempo, quizá incluso de forma indefinida.",
-        nombre + ": ¡Gracias, Nadia! Es justo lo que necesitaba. ¡Eres verdaderamente increíble!"
+        "Yo: ¡Gracias, Nadia! Es justo lo que necesitaba. ¡Eres verdaderamente increíble!"
     };
     [SerializeField, TextArea(4, 6)]
     private string[] NadiaDialogogracias =
@@ -197,9 +197,9 @@ public class Nadia : MonoBehaviour
     private string[] NadiaDialogofinal =
     {
        "Nadia: ¡Vaya, parece que nunca paras!" ,
-       nombre + ": Hay mucho por hacer." ,
+       "Yo: Hay mucho por hacer." ,
        "Nadia: Recuerda que es importante descansar e hidratarte bien, sobre todo con este calor infernal. " ,
-       nombre + ": Gracias, lo tendré en cuenta. Nos vemos por ahí." ,
+       "Yo: Gracias, lo tendré en cuenta. Nos vemos por ahí." ,
        "Nadia: Cuídate, y recuerda no sobrepasarte."
     };
 }

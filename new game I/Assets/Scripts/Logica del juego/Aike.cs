@@ -113,27 +113,27 @@ public class Aike : MonoBehaviour
     [SerializeField, TextArea(4, 6)]
     private string[] AikeDialogoSinSombra =
     {
-        nombre + ": ¿Necesitas ayuda?",
+        "Yo: ¿Necesitas ayuda?",
         "Aike: Sí, por favor, no logro alcanzar mi sombrilla y la necesito para protegerme del sol cuando vaya a mi salón.",
-        nombre + ": Claro, yo te ayudo."
+        "Yo: Claro, yo te ayudo."
     };
 
     [SerializeField, TextArea(4, 6)]
     private string[] AikeDialogoConSombra=
     {
-       nombre + ": Aquí tienes",
+       "Yo: Aquí tienes",
        "Aike: ¡Muchas gracias! Ahora podré salir sin problemas.",
-       nombre + ": Me alegra haber podido ayudarte.",
+       "Yo: Me alegra haber podido ayudarte.",
        "Aike: Ten, es un pequeño obsequio. Note que has estado ayudando al gatito, así que espero que te sea de utilidad.",
        "*Le entrega una taza en agradecimiento.",
-       nombre + ": ¡Oh, una taza! Muchas gracias, ahora ya no tendré que hacer dos viajes para poder darle de comer."
+       "Yo: ¡Oh, una taza! Muchas gracias, ahora ya no tendré que hacer dos viajes para poder darle de comer."
     };
 
     [SerializeField, TextArea(4, 6)]
     private string[] AikeDialogoConAyuda =
     {
        "Aike: ¡Hey! Es bueno volver a verte; gracias a ti llegué a tiempo a mi clase.",
-       nombre + ": No hay de qué, sé que habrías hecho lo mismo por mí.",
+       "Yo: No hay de qué, sé que habrías hecho lo mismo por mí.",
        "Aike:  :)"
     };
 
