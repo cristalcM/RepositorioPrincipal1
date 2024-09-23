@@ -142,22 +142,22 @@ public class Tortuga : MonoBehaviour
     //SUS DIALOGOS 
     //_________________________________________
     [SerializeField, TextArea(4, 6)]
-    public string[] DoroteoDialogoSinAyuda =
+    private string[] DoroteoDialogoSinAyuda =
      {
         "Doroteo: GRRUUH",
         "Jugador: déjame echarte una mano."
     };
     [SerializeField, TextArea(4, 6)]
-    public string[] DoroteoDialogoConAyuda =
+    private string[] DoroteoDialogoConAyuda =
     {
        "*le da las botas*",
        "Yo: ¡Wow! Estas botas me serán muy útiles. ¡Gracias, Doroteo!",
        "Doroteo: mmmmm (nuevamente gracias)",
-       nombre +": no hay de que amiguito."
+       "Yo: no hay de que amiguito."
 
     };
 
-   public string[] DoroteoDialogofinal =
+    private string[] DoroteoDialogofinal =
    {
        "Doroteo: Grah... (Gracias)",
        "Yo: No hay de qué amiguito.",

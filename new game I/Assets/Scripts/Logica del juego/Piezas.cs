@@ -47,6 +47,6 @@ public class Piezas : MonoBehaviour
 
     private string[] PiezaEscondida =
     {
-      "Bigotes tiene hambre, aliméntalo antes de que se escape"
+      "¿Que es eso?"
     };
 }
