@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9aeddcc2871ba25408344c418f5d6f62
+guid: 850f0ac864849724b8d92520cf57de1b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1617653370063797878
-    second: Palmera_0
+      213: 8037250266014564440
+    second: fragRampa_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 170
+  spritePixelsToUnits: 1500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Palmera_0
+      name: fragRampa_0
       rect:
         serializedVersion: 2
-        x: 1026
-        y: 703
-        width: 1287
-        height: 1484
+        x: 1018
+        y: 1030
+        width: 703
+        height: 561
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 67ebd5c5b2f037610800000000000000
-      internalID: 1617653370063797878
+      spriteID: 85046b4a88c0a8f60800000000000000
+      internalID: 8037250266014564440
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Palmera_0: 1617653370063797878
+      fragRampa_0: 8037250266014564440
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
