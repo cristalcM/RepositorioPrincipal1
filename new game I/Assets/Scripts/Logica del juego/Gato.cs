@@ -232,22 +232,22 @@ public class Gato : MonoBehaviour
     //___________________
 
     private string[]  notificacion1 =
-   {
+    {
       "Bigotes tiene hambre, aliméntalo antes de que se escape"
     };
     private string[] notificacion2 =
-   {
+    {
       "Bigotes te ah dado una moneda"
     };
 
     private string[] notificacion3 =
-  {
+    {
       "Bigotes se esta escapando"
     };
 
 
     private string[] notificacion4 =
-  {
+    {
       "Bigotes fue a buscar comida, volverá... pronto...                Quizas"
     };
 }
