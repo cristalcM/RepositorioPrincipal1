@@ -21,7 +21,7 @@ public class Piezas : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            
+            notification.MostrarNotification(PiezaEscondida);
             jugadorEnRango = true;
         }
     }
@@ -44,4 +44,9 @@ public class Piezas : MonoBehaviour
         Debug.Log("Has recogido la pieza.");
         Destroy(gameObject);  // Destruir el objeto físico de la pieza
     }
+
+    private string[] PiezaEscondida =
+    {
+      "Bigotes tiene hambre, aliméntalo antes de que se escape"
+    };
 }
