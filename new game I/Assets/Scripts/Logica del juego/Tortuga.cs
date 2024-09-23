@@ -9,8 +9,7 @@ using UnityEngine.UI;
 
 public class Tortuga : MonoBehaviour
 {
-    static Text TextNombre;
-    static Text TextCarrera;
+    static string nombre;
 
     public Animator doroteoAnimator;   // Asigna el Animator de Doroteo
     public GameObject botas;           // Botas que recibirá el jugador
@@ -32,6 +31,8 @@ public class Tortuga : MonoBehaviour
         }
     }
 
+    //----------------------------------------
+    // Buscar nombre y lo declara
     private void Start()
     {
         if (PlayerPrefs.HasKey("NamePLayer"))
@@ -48,10 +49,11 @@ public class Tortuga : MonoBehaviour
             Debug.Log("Se busca carrera");
         }
 
-        TextNombre.text = PlayerPrefs.GetString("NamePLayer");
-        //TextCarrera.text = PlayerPrefs.GetString("Career");
+        nombre = PlayerPrefs.GetString("NamePLayer");
+
 
     }
+    //----------------------------------------
 
     void InteractuarConDoroteo()
     {
@@ -140,24 +142,24 @@ public class Tortuga : MonoBehaviour
     //SUS DIALOGOS 
     //_________________________________________
     [SerializeField, TextArea(4, 6)]
-    private string[] DoroteoDialogoSinAyuda =
+    public string[] DoroteoDialogoSinAyuda =
      {
         "Doroteo: GRRUUH",
         "Jugador: déjame echarte una mano."
     };
     [SerializeField, TextArea(4, 6)]
-    private string[] DoroteoDialogoConAyuda =
+    public string[] DoroteoDialogoConAyuda =
     {
        "*le da las botas*",
-       TextNombre +": ¡Wow! Estas botas me serán muy útiles. ¡Gracias, Doroteo!",
+       nombre +": ¡Wow! Estas botas me serán muy útiles. ¡Gracias, Doroteo!",
        "Doroteo: mmmmm (nuevamente gracias)",
-       TextNombre +": no hay de que amiguito."
+       nombre +": no hay de que amiguito."
 
     };
 
-    private string[] DoroteoDialogofinal =
+   public string[] DoroteoDialogofinal =
    {
-        "Doroteo: Grah... (Gracias)",
-        TextNombre +": No hay de qué amiguito.",
-    };
+       "Doroteo: Grah... (Gracias)",
+       nombre +": No hay de qué amiguito.",
+   };
 }

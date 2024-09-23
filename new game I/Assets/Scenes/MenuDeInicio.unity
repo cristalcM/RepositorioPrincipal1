@@ -1220,7 +1220,6 @@ GameObject:
   - component: {fileID: 413986317}
   - component: {fileID: 413986316}
   - component: {fileID: 413986315}
-  - component: {fileID: 413986318}
   m_Layer: 5
   m_Name: BSalir
   m_TagString: Untagged
@@ -1354,19 +1353,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413986313}
   m_CullTransparentMesh: 1
---- !u!114 &413986318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413986313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeaa56c6ae342674c982845ff524b5cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CustomizacionPanel: {fileID: 1379671095}
 --- !u!1 &416196035
 GameObject:
   m_ObjectHideFlags: 0

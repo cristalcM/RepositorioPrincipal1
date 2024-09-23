@@ -10,15 +10,13 @@ using UnityEngine.UI;
 
 public class Aike : MonoBehaviour
 {
+    static string nombre;
 
     public bool necesitaAyuda = true;
     public GameObject sombrilla;
     public GameObject tazaPrefab;
     private bool jugadorEnRango = false;  // Para detectar si el jugador está cerca
     public DialogoNPC Dialogo;
-
-    static Text TextNombre;
-    static Text TextCarrera;
 
     private void Update()
     {
@@ -30,6 +28,8 @@ public class Aike : MonoBehaviour
         }
     }
 
+    //----------------------------------------
+    // Buscar nombre y lo declara
     private void Start()
     {
         if (PlayerPrefs.HasKey("NamePLayer"))
@@ -46,10 +46,10 @@ public class Aike : MonoBehaviour
             Debug.Log("Se busca carrera");
         }
 
-        TextNombre.text = PlayerPrefs.GetString("NamePLayer");
-        //TextCarrera.text = PlayerPrefs.GetString("Career");
+        nombre = PlayerPrefs.GetString("NamePLayer");
 
     }
+    //----------------------------------------
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -112,27 +112,27 @@ public class Aike : MonoBehaviour
     [SerializeField, TextArea(4, 6)]
     private string[] AikeDialogoSinSombra =
     {
-        TextNombre + ": ¿Necesitas ayuda?",
+        nombre + ": ¿Necesitas ayuda?",
         "Aike: Sí, por favor, no logro alcanzar mi sombrilla y la necesito para protegerme del sol cuando vaya a mi salón.",
-        TextNombre + ": Claro, yo te ayudo."
+        nombre + ": Claro, yo te ayudo."
     };
 
     [SerializeField, TextArea(4, 6)]
     private string[] AikeDialogoConSombra=
     {
-       TextNombre + ": Aquí tienes",
+       nombre + ": Aquí tienes",
        "Aike: ¡Muchas gracias! Ahora podré salir sin problemas.",
-       TextNombre + ": Me alegra haber podido ayudarte.",
+       nombre + ": Me alegra haber podido ayudarte.",
        "Aike: Ten, es un pequeño obsequio. Note que has estado ayudando al gatito, así que espero que te sea de utilidad.",
        "*Le entrega una taza en agradecimiento.",
-       TextNombre + ": ¡Oh, una taza! Muchas gracias, ahora ya no tendré que hacer dos viajes para poder darle de comer."
+       nombre + ": ¡Oh, una taza! Muchas gracias, ahora ya no tendré que hacer dos viajes para poder darle de comer."
     };
 
     [SerializeField, TextArea(4, 6)]
     private string[] AikeDialogoConAyuda =
     {
        "Aike: ¡Hey! Es bueno volver a verte; gracias a ti llegué a tiempo a mi clase.",
-       TextNombre + ": No hay de qué, sé que habrías hecho lo mismo por mí.",
+       nombre + ": No hay de qué, sé que habrías hecho lo mismo por mí.",
        "Aike:  :)"
     };
 

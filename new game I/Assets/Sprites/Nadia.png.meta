@@ -154,7 +154,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Nadia_0: -6743243474991480926
+      Nadia_1: -8546602442933819025
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

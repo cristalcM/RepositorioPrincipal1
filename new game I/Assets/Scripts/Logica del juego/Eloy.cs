@@ -10,6 +10,8 @@ using static UnityEditor.PlayerSettings;
 
 public class Eloy : MonoBehaviour
 {
+    static string nombre;
+
     public GameObject player;
     public Vector2 coordenadasCorrectas = new(5, 3);  // Coordenadas correctas del edificio E
     public GameObject llaveroObjeto;  // Llavero que recibirá el jugador
@@ -23,9 +25,6 @@ public class Eloy : MonoBehaviour
     public DialogoNPC Dialogo;
     public GameObject panelPregunta;
 
-   static Text TextNombre;
-    //public static Text TextCarrera;
-
 
     void Start()
     {
@@ -35,6 +34,16 @@ public class Eloy : MonoBehaviour
         // Asignar la función al botón
         enviarButton.onClick.AddListener(EnviarCoordenadas);
 
+        if (PlayerPrefs.HasKey("NamePLayer"))
+        {
+            nombre = PlayerPrefs.GetString("NamePLayer");
+        }
+    }
+
+    //----------------------------------------
+    // Buscar nombre y lo declara
+    void Update()
+    {
         if (PlayerPrefs.HasKey("NamePLayer"))
         {
             string playerName = PlayerPrefs.GetString("NamePLayer");
@@ -49,20 +58,10 @@ public class Eloy : MonoBehaviour
             Debug.Log("Se busca carrera");
         }
 
-        TextNombre.text = PlayerPrefs.GetString("NamePLayer");
-        //TextCarrera.text = PlayerPrefs.GetString("Career");
-    }
-
-    void Update()
-    {
-        if (esperandoRespuesta && Input.GetKeyDown(KeyCode.E))
-        {
-            IniciarInteraccion();
-           
-        }
+        nombre = PlayerPrefs.GetString("NamePLayer");
 
     }
-   
+    //----------------------------------------
 
     void IniciarInteraccion()
     {
@@ -158,7 +157,7 @@ public class Eloy : MonoBehaviour
     private string[] EloyDialogoSinAyuda =
     {
        "Eloy: ¡Oye, asere! Soy de intercambio y no entiendo el mapa del CUC. ¿Sabes cuáles son las coordenadas del edificio E?",
-       TextNombre +": ammm las cordenadas son..."
+       nombre +": ammm las cordenadas son..."
 
     };
 
@@ -169,9 +168,9 @@ public class Eloy : MonoBehaviour
 
         "Eloy: ¡Gracias, asere! Te tengo un regalito.",
         "*le entrega un llavero.",
-        TextNombre +": Está playera esta hermosa, tu trabajo es increíble.",
+        nombre +": Está playera esta hermosa, tu trabajo es increíble.",
          "Eloy: Nuevamente, gracias mi asere, nos vemos.",
-        TextNombre +": ¡Adiós!",
+        nombre +": ¡Adiós!",
 
 
     };
@@ -180,7 +179,7 @@ public class Eloy : MonoBehaviour
    {
 
         "Eloy: ¡Asere, ¿qué bolá?! Me alegra ver que uses mi regalo.",
-        TextNombre +": Me alegra verte. ¿Y cómo no usarla si tu trabajo es magnífico?"
+        nombre +": Me alegra verte. ¿Y cómo no usarla si tu trabajo es magnífico?"
     };
 
 

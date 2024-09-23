@@ -18,12 +18,10 @@ public class DialogoNPC : MonoBehaviour
     private bool dialogoActivo;
     private bool DidDialogueStart;
 
+
     //---------------------------------------
     //Metodo para iniciat un dialogo
     //---------------------------------------
-
-  
-
     public void MostrarDialogo(string[] lineas)
     {
         DialogoLineas = lineas;

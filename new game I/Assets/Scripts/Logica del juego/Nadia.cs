@@ -9,8 +9,7 @@ using UnityEngine.UI;
 
 public class Nadia : MonoBehaviour
 {
-    static Text TextNombre;
-    static Text TextCarrera;
+    static string nombre;
 
     //-----------------------------
     //Atributos publicos.
@@ -33,6 +32,10 @@ public class Nadia : MonoBehaviour
     public Inventario inventario;
     public DialogoNPC dialogo;
 
+
+
+    //----------------------------------------
+    // Buscar nombre y lo declara
     private void Start()
     {
         if (PlayerPrefs.HasKey("NamePLayer"))
@@ -49,9 +52,9 @@ public class Nadia : MonoBehaviour
             Debug.Log("Se busca carrera");
         }
 
-        TextNombre.text = PlayerPrefs.GetString("NamePLayer");
-        //TextCarrera.text = PlayerPrefs.GetString("Career");
+        nombre = PlayerPrefs.GetString("NamePLayer");
     }
+    //----------------------------------------
 
     private void Update()
     {
@@ -127,7 +130,7 @@ public class Nadia : MonoBehaviour
 
         Debug.Log("Nadia: ¡Gracias, ahora podré continuar!");
         Debug.Log("Jugador: ¡Gracias, Nadia!");
-        transform.position = new Vector3(0, 0, 0); //POsicion a la que se movera nadia
+        transform.position = new Vector3(-16, -25, 0); //POsicion a la que se movera nadia
     }
     void SegundaInteraccion()
     {
@@ -167,14 +170,14 @@ public class Nadia : MonoBehaviour
     [SerializeField, TextArea(4, 6)]
     private string[] NadiaDialogoSinAyuda=
      {
-        TextNombre + ": Hola, ¿tienes algún problema?",
+        nombre + ": Hola, ¿tienes algún problema?",
         "Nadia: Sí, no puedo pasar, hace falta una rampa.",
-        TextNombre + ": Mmm… voy a buscar una solución. Quizás logre encontrar unas piezas para improvisar una."
+        nombre + ": Mmm… voy a buscar una solución. Quizás logre encontrar unas piezas para improvisar una."
     };
     [SerializeField, TextArea(4, 6)]
     private string[] NadiaDialogoRampa =
     {
-        TextNombre + ": Fue un poco difícil, pero aquí está la rampa."
+        nombre + ": Fue un poco difícil, pero aquí está la rampa."
     };
     [SerializeField, TextArea(4, 6)]
     private string[] NadiaDialogoConAYUDA=
@@ -183,7 +186,7 @@ public class Nadia : MonoBehaviour
             "y he notado que Bigotes es bastante activo, especialmente cuando lo alimentas. " +
             "He escuchado que cuando tiene mucha hambre suele desaparecer por un tiempo. No sé mucho de animales, " +
             "pero tal vez este pescado dorado le ayude a quedarse contigo por más tiempo, quizá incluso de forma indefinida.",
-        TextNombre + ": ¡Gracias, Nadia! Es justo lo que necesitaba. ¡Eres verdaderamente increíble!"
+        nombre + ": ¡Gracias, Nadia! Es justo lo que necesitaba. ¡Eres verdaderamente increíble!"
     };
     [SerializeField, TextArea(4, 6)]
     private string[] NadiaDialogogracias =
@@ -194,9 +197,9 @@ public class Nadia : MonoBehaviour
     private string[] NadiaDialogofinal =
     {
        "Nadia: ¡Vaya, parece que nunca paras!" ,
-       TextNombre + ": Hay mucho por hacer." ,
-        "Nadia: Recuerda que es importante descansar e hidratarte bien, sobre todo con este calor infernal. " ,
-        TextNombre + ": Gracias, lo tendré en cuenta. Nos vemos por ahí." ,
-        "Nadia: Cuídate, y recuerda no sobrepasarte."
+       nombre + ": Hay mucho por hacer." ,
+       "Nadia: Recuerda que es importante descansar e hidratarte bien, sobre todo con este calor infernal. " ,
+       nombre + ": Gracias, lo tendré en cuenta. Nos vemos por ahí." ,
+       "Nadia: Cuídate, y recuerda no sobrepasarte."
     };
 }

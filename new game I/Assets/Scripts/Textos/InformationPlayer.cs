@@ -28,37 +28,36 @@ public class InformationPlayer : MonoBehaviour
     public TMP_Text TextMonedas;
     public TMP_Text TextPiezas;
 
+    // Información y variables
     public Inventario inventario;
-
-
  
     int monedas;
     int croquetas;
     int piezas;
 
-    // Start is called before the first frame update
+    //----------------------------------------
+    // Buscar nombre y carrera para declaralo al inicio
+    //----------------------------------------
     void Start()
     {
        
         if (PlayerPrefs.HasKey("NamePLayer"))
         {
             string playerName = PlayerPrefs.GetString("NamePLayer");
-            // Aquí puedes usar "playerName" en tus diálogos o donde sea necesario
-            Debug.Log("Se busca nombre");
         }
 
         if (PlayerPrefs.HasKey("Career"))
         {
             string playerCareer = PlayerPrefs.GetString("Career");
-            // Aquí puedes usar "playerCareer" en tus diálogos o donde sea necesario
-            Debug.Log("Se busca carrera");
         }
 
         TextNombre.text = PlayerPrefs.GetString("NamePLayer");
         TextCarrera.text = PlayerPrefs.GetString("Career");
     }
 
-    // Update is called once per frame
+    //----------------------------------------
+    // Se muestra la información del inventario
+    //----------------------------------------
     void Update()
     {
         monedas = inventario.monedas;

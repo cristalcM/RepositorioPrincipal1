@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using TMPro;
-using static System.Net.Mime.MediaTypeNames;
+using static System.Net.Mime.MediaTypeNames.Application;
 
 public class MainPanel : MonoBehaviour
 {
@@ -51,7 +51,9 @@ public class MainPanel : MonoBehaviour
         LoadVolumeSettings();
     }
 
-
+    //----------------------------------------
+    // Buscar nombre y carrera para mostrarlo
+    //----------------------------------------
     void Start()
     {
         if (PlayerPrefs.HasKey("NamePLayer"))
@@ -67,19 +69,20 @@ public class MainPanel : MonoBehaviour
         }
     }
 
+    //----------------------------------------
+    // Sube la información del jugador que registro
+    //----------------------------------------
     public void UpdateInfo()
     {
-
         PlayerPrefs.SetString("NamePLayer", NombrePlayer.text);
         PlayerPrefs.SetString("Career", Career.text);
 
-        //Prueba1.text = PlayerPrefs.GetString("NamePLayer", NombrePlayer.text);
-        //Prueba2.text = PlayerPrefs.GetString("Career", Career.text);
-
-        //VisibleP1.SetActive(true);
-        //VisibleP2.SetActive(true);        
+        PlayerPrefs.Save();
     }
 
+    //----------------------------------------
+    // Busca informació para activar la función
+    //----------------------------------------
     private void Update()
     {
         //Si es menor el texto a un caracter no se activara el juego
@@ -145,6 +148,7 @@ public class MainPanel : MonoBehaviour
     {
         fxsourse.PlayOneShot(clicksound);
     }
+
     //---------------------------------------
     //Método para cargar los valores de volumen guardados
     //---------------------------------------
@@ -170,6 +174,6 @@ public class MainPanel : MonoBehaviour
     //---------------------------------------
     public void SalirJuego()
     {
-        //Application.Quit();
+        Application.Quit();
     }
 }

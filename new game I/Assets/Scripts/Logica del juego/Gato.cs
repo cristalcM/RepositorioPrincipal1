@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.ConstrainedExecution;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 public class Gato : MonoBehaviour
 {
-
-
-    static string nombre;
+    TMP_Text TextaNema;
+    public string nombre;
     //-----------------------------
     //Atributos publicos.
     //---------------------------
@@ -30,29 +31,13 @@ public class Gato : MonoBehaviour
     private Player Player;
 
 
-    /// <summary>
-    /// Buscar nombre
-    /// </summary>
+    //----------------------------------------
+    // Buscar nombre y lo declara
     private void Start()
     {
-        if (PlayerPrefs.HasKey("NamePLayer"))
-        {
-            string playerName = PlayerPrefs.GetString("NamePLayer");
-            // Aquí puedes usar "playerName" en tus diálogos o donde sea necesario
-            Debug.Log("Se busca nombre");
-        }
-
-        if (PlayerPrefs.HasKey("Career"))
-        {
-            string playerCareer = PlayerPrefs.GetString("Career");
-            // Aquí puedes usar "playerCareer" en tus diálogos o donde sea necesario
-            Debug.Log("Se busca carrera");
-        }
-
-        nombre= PlayerPrefs.GetString("NamePLayer");
-
+        nombre = PlayerPrefs.GetString("NamePLayer");
     }
-
+    //----------------------------------------
 
 
     private void Update()
@@ -70,11 +55,9 @@ public class Gato : MonoBehaviour
             {
                 Debug.Log("No tienes comida para el gato.");
            
-                Dialogo.MostrarDialogo(gatoDialogoSincomida);
+                Dialogo.MostrarDialogo(gatoDialogoSincomidaTemplate);
             }
         }
-
-      
 
     }
 
@@ -116,7 +99,7 @@ public class Gato : MonoBehaviour
             else
             {
                 comidaRecibida++;
-                Debug.Log(nombre + "El gato ha recibido algo de comida.");
+                Debug.Log("El gato ha recibido algo de comida.");
                 Dialogo.MostrarDialogo(gatoDialogoConcomida);
                 if (comidaRecibida == 3)
                 {
@@ -199,39 +182,40 @@ public class Gato : MonoBehaviour
     //SUS DIALOGOS 
     //_________________________________________
     [ TextArea(4, 6)]
-    public string[] gatoDialogoSincomida =
-     {
+    public string[] gatoDialogoSincomidaTemplate =
+    {
         "Gato: ¡MIAUURR!",
-        nombre +": ¿Te encuentras bien, amiguito?",
+        "{nombre}: ¿Te encuentras bien, amiguito?",
         "Gato: MRAUU",
-        nombre +": Mmm… pareces tener hambre, déjame buscarte algo de comer.",
-
+        "{nombre}: Mmm… pareces tener hambre, déjame buscarte algo de comer.",
 
     };
+
     [ TextArea(4, 6)]
     public string[] gatoDialogoContaza =
-   {
+    {
     // Después de dar la primera comida
-        nombre+": Aquí tienes.",
+        "{nombre}: Aquí tienes.",
         "Gato: Mrauu",
-        nombre +": Me alegra que fuera suficiente.",
+        "{nombre}: Me alegra que fuera suficiente.",
     };
+
     [TextArea(4, 6)]
     public string[] gatoDialogoConcomida =
     {
     // Después de dar la primera comida
-        nombre +": Aquí tienes.",
+        "{nombre}: Aquí tienes.",
         "Gato: Mrauu",
-        nombre +": Parece que aún tienes hambre, supongo que tendré que traerte un poco más.",
+        "{nombre}: Parece que aún tienes hambre, supongo que tendré que traerte un poco más.",
     };
     [TextArea(4, 6)]
     public string[] gatoDialogoFinal =
    {
      // Después de la segunda comida
-        nombre +": Ahora sí, provecho Bigotes.",
+        "{nombre}: Ahora sí, provecho Bigotes.",
         "Gato: Miau",
         "*El gato le da una moneda en agradecimiento.*",
-        nombre +": Gracias amigo, regresaré a visitarte más tarde por si vuelves a tener hambre.",
+        "{nombre}: Gracias amigo, regresaré a visitarte más tarde por si vuelves a tener hambre.",
         "Gato: ¡Miau!"
     };
 
@@ -239,7 +223,7 @@ public class Gato : MonoBehaviour
     {
         // Después de dar la primera comida
         "Gato: Rrrrrrr",
-        nombre +": Es bueno ver que estés bien. Nos vemos más tarde."
+        "{nombre}: Es bueno ver que estés bien. Nos vemos más tarde."
 ,
     };
 
@@ -267,8 +251,4 @@ public class Gato : MonoBehaviour
   {
       "Bigotes fue a buscar comida, volverá... pronto...                Quizas"
     };
-
-
-
-
 }
