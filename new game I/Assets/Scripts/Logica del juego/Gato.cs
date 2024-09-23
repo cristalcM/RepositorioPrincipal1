@@ -45,7 +45,7 @@ public class Gato : MonoBehaviour
         {
             Player = FindFirstObjectByType<Player>();
 
-            if (Player != null && Player.croquetas > 0)  // Solo dar comida si el jugador tiene comida
+            if (Player != null && Player.croquetas < 0)  // Solo dar comida si el jugador tiene comida
             {
                 DarComida(Player.TieneTaza());  // Llama a DarComida si el jugador está cerca y tiene comida
                 Player.RecibirTaza();  // Después de dar comida, el jugador pierde su comida
@@ -54,7 +54,7 @@ public class Gato : MonoBehaviour
             {
                 Debug.Log("No tienes comida para el gato.");
            
-                Dialogo.MostrarDialogo(gatoDialogoSincomidaTemplate);
+                Dialogo.MostrarDialogo(gatoDialogoSincomida);
             }
         }
 
@@ -181,7 +181,7 @@ public class Gato : MonoBehaviour
     //SUS DIALOGOS 
     //_________________________________________
     [ TextArea(4, 6)]
-    private string[] gatoDialogoSincomidaTemplate =
+    private string[] gatoDialogoSincomida =
     {
         "Gato: ¡MIAUURR!",
         "Yo mero: ¿Te encuentras bien, amiguito?",

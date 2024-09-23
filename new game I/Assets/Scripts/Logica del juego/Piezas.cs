@@ -21,7 +21,6 @@ public class Piezas : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            notification.MostrarNotification(PiezaEscondida);
             jugadorEnRango = true;
         }
     }
