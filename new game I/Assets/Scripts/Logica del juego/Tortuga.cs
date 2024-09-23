@@ -93,7 +93,7 @@ public class Tortuga : MonoBehaviour
         Debug.Log("El gato te ha dado una moneda.");
         yaEntregoBotas = true;
       
-        Instantiate(botas, transform.position + new Vector3(0, -2, 0), Quaternion.identity);
+        Instantiate(botas, transform.position + new Vector3(0, -2, -5), Quaternion.identity);
 
         //Mostrar el diálogo de agradecimiento
             Debug.Log("Doroteo: ¡Gracias por ayudarme! Aquí tienes unas botas.");
@@ -141,13 +141,13 @@ public class Tortuga : MonoBehaviour
     //__________________________________________
     //SUS DIALOGOS 
     //_________________________________________
-    [SerializeField, TextArea(4, 6)]
+    [ TextArea(4, 6)]
     private string[] DoroteoDialogoSinAyuda =
      {
         "Doroteo: GRRUUH",
         "Jugador: déjame echarte una mano."
     };
-    [SerializeField, TextArea(4, 6)]
+    [ TextArea(4, 6)]
     private string[] DoroteoDialogoConAyuda =
     {
        "*le da las botas*",

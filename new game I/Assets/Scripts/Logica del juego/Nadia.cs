@@ -167,19 +167,19 @@ public class Nadia : MonoBehaviour
     //__________________________________________
     //SUS DIALOGOS 
     //_________________________________________
-    [SerializeField, TextArea(4, 6)]
+    [ TextArea(4, 6)]
     private string[] NadiaDialogoSinAyuda=
      {
         "Yo: Hola, ¿tienes algún problema?",
         "Nadia: Sí, no puedo pasar, hace falta una rampa.",
         "Yo: Mmm… voy a buscar una solución. Quizás logre encontrar unas piezas para improvisar una."
     };
-    [SerializeField, TextArea(4, 6)]
+    [ TextArea(4, 6)]
     private string[] NadiaDialogoRampa =
     {
         "Yo: Fue un poco difícil, pero aquí está la rampa."
     };
-    [SerializeField, TextArea(4, 6)]
+    [ TextArea(4, 6)]
     private string[] NadiaDialogoConAYUDA=
     {
         "Nadia: ¡Gracias, ahora podré continuar! Estoy estudiando cultura física y deporte, " +
@@ -188,12 +188,12 @@ public class Nadia : MonoBehaviour
             "pero tal vez este pescado dorado le ayude a quedarse contigo por más tiempo, quizá incluso de forma indefinida.",
         "Yo: ¡Gracias, Nadia! Es justo lo que necesitaba. ¡Eres verdaderamente increíble!"
     };
-    [SerializeField, TextArea(4, 6)]
+    [ TextArea(4, 6)]
     private string[] NadiaDialogogracias =
     {
        
     };
-    [SerializeField, TextArea(4, 6)]
+    [ TextArea(4, 6)]
     private string[] NadiaDialogofinal =
     {
        "Nadia: ¡Vaya, parece que nunca paras!" ,

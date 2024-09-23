@@ -7074,19 +7074,6 @@ MonoBehaviour:
   enviarButton: {fileID: 1439390721}
   Dialogo: {fileID: 1602591653}
   panelPregunta: {fileID: 1881522901}
-  EloyDialogoSinAyuda:
-  - "Eloy: \xA1Oye, asere! Soy de intercambio y no entiendo el mapa del CUC. \xBFSabes
-    cu\xE1les son las coordenadas del edificio E?"
-  - ' "Jugador: ammm las cordenadas son..."'
-  EloyDialogoConAyuda:
-  - "Eloy: \xA1Gracias, asere! Te tengo un regalito."
-  - '*le entrega un llavero.'
-  - "Jugador: Est\xE1 playera esta hermosa, tu trabajo es incre\xEDble."
-  - 'Eloy: Nuevamente, gracias mi asere, nos vemos.'
-  - "Jugador: \xA1Adi\xF3s!"
-  EloyDialogoFinal:
-  - "Eloy: \xA1Asere, \xBFqu\xE9 bol\xE1?! Me alegra ver que uses mi regalo."
-  - "Jugador: Me alegra verte. \xBFY c\xF3mo no usarla si tu trabajo es magn\xEDfico?"
 --- !u!61 &695179387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10008,25 +9995,6 @@ MonoBehaviour:
   sombrilla: {fileID: 0}
   tazaPrefab: {fileID: 3601419130941240707, guid: 7ef125a58e2d96a4d97f4993a4beb4dd, type: 3}
   Dialogo: {fileID: 1602591653}
-  AikeDialogoSinSombra:
-  - "Jugador: \xBFNecesitas ayuda?"
-  - "Aike: S\xED, por favor, no logro alcanzar mi sombrilla y la necesito para protegerme
-    del sol cuando vaya a mi sal\xF3n."
-  - 'Jugador: Claro, yo te ayudo.'
-  AikeDialogoConSombra:
-  - "Jugador: Aqu\xED tienes"
-  - "Aike: \xA1Muchas gracias! Ahora podr\xE9 salir sin problemas."
-  - 'Jugador: Me alegra haber podido ayudarte.'
-  - "Aike: Ten, es un peque\xF1o obsequio. Note que has estado ayudando al gatito,
-    as\xED que espero que te sea de utilidad."
-  - '*Le entrega una taza en agradecimiento.'
-  - "Jugador: \xA1Oh, una taza! Muchas gracias, ahora ya no tendr\xE9 que hacer dos
-    viajes para poder darle de comer."
-  AikeDialogoConAyuda:
-  - "Aike: \xA1Hey! Es bueno volver a verte; gracias a ti llegu\xE9 a tiempo a mi
-    clase."
-  - "Jugador: No hay de qu\xE9, s\xE9 que habr\xEDas hecho lo mismo por m\xED."
-  - 'Aike:  :)'
 --- !u!50 &940875575
 Rigidbody2D:
   serializedVersion: 4
@@ -114820,14 +114788,6 @@ MonoBehaviour:
   distanciaInteraccion: 2
   Dialogo: {fileID: 1602591653}
   notification: {fileID: 1021916853}
-  DoroteoDialogoSinAyuda:
-  - 'Doroteo: GRRUUH'
-  - "Jugador: d\xE9jame echarte una mano."
-  DoroteoDialogoConAyuda:
-  - '*le da las botas*'
-  - "Jugador: \xA1Wow! Estas botas me ser\xE1n muy \xFAtiles. \xA1Gracias, Doroteo!"
-  - 'Doroteo: mmmmm (nuevamente gracias)'
-  - 'Jugado: no hay de que amiguito.'
 --- !u!95 &1732468553
 Animator:
   serializedVersion: 7
@@ -115410,29 +115370,6 @@ MonoBehaviour:
   rampaPosicion: {fileID: 1217582786}
   inventario: {fileID: 256741983}
   dialogo: {fileID: 1602591653}
-  NadiaDialogoSinAyuda:
-  - "Jugador: Hola, \xBFtienes alg\xFAn problema?"
-  - "Nadia: S\xED, no puedo pasar, hace falta una rampa."
-  - "Jugador: Mmm\u2026 voy a buscar una soluci\xF3n. Quiz\xE1s logre encontrar unas
-    piezas para improvisar una."
-  NadiaDialogoRampa:
-  - "Jugador: Fue un poco dif\xEDcil, pero aqu\xED est\xE1 la rampa."
-  NadiaDialogoConAYUDA:
-  - "Nadia: \xA1Gracias, ahora podr\xE9 continuar! Estoy estudiando cultura f\xEDsica
-    y deporte, y he notado que Bigotes es bastante activo, especialmente cuando lo
-    alimentas. He escuchado que cuando tiene mucha hambre suele desaparecer por un
-    tiempo. No s\xE9 mucho de animales, pero tal vez este pescado dorado le ayude
-    a quedarse contigo por m\xE1s tiempo, quiz\xE1 incluso de forma indefinida."
-  NadiaDialogogracias:
-  - "Jugador: \xA1Gracias, Nadia! Es justo lo que necesitaba. \xA1Eres verdaderamente
-    incre\xEDble!"
-  NadiaDialogofinal:
-  - "Nadia: \xA1Vaya, parece que nunca paras!"
-  - 'Jugador: Hay mucho por hacer.'
-  - 'Nadia: Recuerda que es importante descansar e hidratarte bien, sobre todo con
-    este calor infernal. '
-  - "Jugador: Gracias, lo tendr\xE9 en cuenta. Nos vemos por ah\xED."
-  - "Nadia: Cu\xEDdate, y recuerda no sobrepasarte."
 --- !u!212 &1803951068
 SpriteRenderer:
   m_ObjectHideFlags: 0

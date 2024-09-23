@@ -159,7 +159,7 @@ public class Eloy : MonoBehaviour
     //SUS DIALOGOS 
     //_________________________________________
 
-    [SerializeField, TextArea(4, 6)]
+    [ TextArea(4, 6)]
     private string[] EloyDialogoSinAyuda =
     {
        "Eloy: ¡Oye, asere! Soy de intercambio y no entiendo el mapa del CUC. ¿Sabes cuáles son las coordenadas del edificio E?",
@@ -168,7 +168,7 @@ public class Eloy : MonoBehaviour
     };
 
 
-    [SerializeField, TextArea(4, 6)]
+    [ TextArea(4, 6)]
     private string[] EloyDialogoConAyuda =
     {
 
@@ -180,7 +180,7 @@ public class Eloy : MonoBehaviour
 
 
     };
-    [SerializeField, TextArea(4, 6)]
+    [TextArea(4, 6)]
     private string[] EloyDialogoFinal =
    {
 
