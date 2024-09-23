@@ -44,19 +44,25 @@ public class Eloy : MonoBehaviour
     // Buscar nombre y lo declara
     void Update()
     {
-        if (PlayerPrefs.HasKey("NamePLayer"))
-        {
-            string playerName = PlayerPrefs.GetString("NamePLayer");
-            // Aquí puedes usar "playerName" en tus diálogos o donde sea necesario
-            Debug.Log("Se busca nombre");
-        }
 
-        if (PlayerPrefs.HasKey("Career"))
+
+        if (esperandoRespuesta && Input.GetKeyDown(KeyCode.E))  // Si el jugador está en rango y presiona E
         {
-            string playerCareer = PlayerPrefs.GetString("Career");
-            // Aquí puedes usar "playerCareer" en tus diálogos o donde sea necesario
-            Debug.Log("Se busca carrera");
+            IniciarInteraccion();
         }
+        //if (PlayerPrefs.HasKey("NamePLayer"))
+        //{
+        //    string playerName = PlayerPrefs.GetString("NamePLayer");
+        //    // Aquí puedes usar "playerName" en tus diálogos o donde sea necesario
+        //    Debug.Log("Se busca nombre");
+        //}
+
+        //if (PlayerPrefs.HasKey("Career"))
+        //{
+        //    string playerCareer = PlayerPrefs.GetString("Career");
+        //    // Aquí puedes usar "playerCareer" en tus diálogos o donde sea necesario
+        //    Debug.Log("Se busca carrera");
+        //}
 
         nombre = PlayerPrefs.GetString("NamePLayer");
 

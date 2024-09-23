@@ -22,6 +22,7 @@ public class Aike : MonoBehaviour
     {
         if (jugadorEnRango && Input.GetKeyDown(KeyCode.E)) // Si el jugador está en rango y presiona E
         {
+             Dialogo.MostrarDialogo(AikeDialogoSinSombra);
             Player player = FindFirstObjectByType<Player>();
             DarSombrilla(player.TieneSombra());  // Llama a DarSomvrilla si el jugador está cerca
             
@@ -71,11 +72,11 @@ public class Aike : MonoBehaviour
 
     public void DarSombrilla(bool JugadorTieneSombra)
     {
-
+       
         Debug.Log("Texto de conversaion");
         if (necesitaAyuda)
         {
-            Dialogo.MostrarDialogo(AikeDialogoSinSombra);
+           
 
             if ( JugadorTieneSombra)
             {

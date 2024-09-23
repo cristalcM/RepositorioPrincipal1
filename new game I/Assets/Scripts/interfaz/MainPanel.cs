@@ -122,8 +122,9 @@ public class MainPanel : MonoBehaviour
         if (TextaNema.text.Length > 1 && TextCarrera.text.Length > 1)
         {
             SceneManager.LoadScene(sceneName);
+            PLaySoundButton();
         }
-
+        
         ////activar depúes de la prueba
         PlayerPrefs.SetString("NamePLayer", NombrePlayer.text);
         PlayerPrefs.SetString("Career", Career.text);
