@@ -69,19 +69,21 @@ public class MainPlayer : MonoBehaviour
 
 
         MoverHaciaObjetivo();
+       
     }
 
     //mover el personaje hacia donde quiere ir
     private void MoverHaciaObjetivo()
     {
         bool isColliding = Physics2D.OverlapCircle(transform.position, radioDeDeteccion, layerDeColision);
+
         // Calcular la dirección hacia el objetivo
         Vector3 direccion = (posicionDobjetivo - transform.position).normalized;
-
         if (hasNewClick)
         {
             transform.position = Vector3.MoveTowards(transform.position, posicionDobjetivo, velocidad * Time.deltaTime);
 
+            
             // Actualizar los parámetros de animación
             animator.SetFloat("MovimientoX", direccion.x);
             animator.SetFloat("MovimientoY", direccion.y);
@@ -91,6 +93,8 @@ public class MainPlayer : MonoBehaviour
                 animator.SetFloat("UltimoX", direccion.x);
                 animator.SetFloat("UltimoY", direccion.y);
             }
+
+          
 
             if (objetoObjetivo != null && Vector3.Distance(transform.position, objetoObjetivo.transform.position) <= 3f)
             {
@@ -105,6 +109,7 @@ public class MainPlayer : MonoBehaviour
         }
         else
         {
+
             // Si no hay clics, y no se está moviendo, cambiar a la animación de idle
             animator.SetFloat("MovimientoX", 0);
             animator.SetFloat("MovimientoY", 0);
@@ -123,8 +128,8 @@ public class MainPlayer : MonoBehaviour
             // Usar la última dirección para mostrar la animación idle
             animator.SetFloat("MovimientoX", 0);
             animator.SetFloat("MovimientoY", 0);
-        }
-    }
+            }
+      }
 
     //Metodo para agarrar el objeto
     void Agarrar(GameObject objeto)

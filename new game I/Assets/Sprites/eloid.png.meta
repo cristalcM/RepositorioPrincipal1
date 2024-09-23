@@ -1,0 +1,614 @@
+fileFormatVersion: 2
+guid: 4756c4f1823fd83449d85d305e33ad9b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5560061313971138481
+    second: eloid_0
+  - first:
+      213: -913508238956843669
+    second: eloid_1
+  - first:
+      213: 6443250783003864788
+    second: eloid_2
+  - first:
+      213: 4601846498021018326
+    second: eloid_3
+  - first:
+      213: 8990767988114263345
+    second: eloid_4
+  - first:
+      213: -5950405705465547415
+    second: eloid_5
+  - first:
+      213: -958401922448190317
+    second: eloid_6
+  - first:
+      213: 3084211133470536580
+    second: eloid_7
+  - first:
+      213: 7032297200834292784
+    second: eloid_8
+  - first:
+      213: -6310140828817542631
+    second: eloid_9
+  - first:
+      213: -5574230660982269197
+    second: eloid_10
+  - first:
+      213: -5928103490260530950
+    second: eloid_11
+  - first:
+      213: -3688625766585100455
+    second: eloid_12
+  - first:
+      213: 9029277940714568404
+    second: eloid_13
+  - first:
+      213: 2813370915253779452
+    second: eloid_14
+  - first:
+      213: -6967363019978066670
+    second: eloid_15
+  - first:
+      213: 2229697180889674899
+    second: eloid_16
+  - first:
+      213: 1134493302115482895
+    second: eloid_17
+  - first:
+      213: -6679584592168757553
+    second: eloid_18
+  - first:
+      213: -7886268228099520753
+    second: eloid_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: eloid_0
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 3736
+        width: 125
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f40db5381b1b6d2b0800000000000000
+      internalID: -5560061313971138481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_1
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 3427
+        width: 600
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6da59db8119253f0800000000000000
+      internalID: -913508238956843669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_2
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 3754
+        width: 102
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dee3b703760b6950800000000000000
+      internalID: 6443250783003864788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_3
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 3708
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6da0b61220b0ddf30800000000000000
+      internalID: 4601846498021018326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_4
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 3433
+        width: 80
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d018d99df95cc70800000000000000
+      internalID: 8990767988114263345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_5
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 2689
+        width: 131
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965b4489989eb6da0800000000000000
+      internalID: -5950405705465547415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_6
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 2333
+        width: 625
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3949c64878213b2f0800000000000000
+      internalID: -958401922448190317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_7
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 2702
+        width: 101
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 483f0de5fa15dca20800000000000000
+      internalID: 3084211133470536580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_8
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 2352
+        width: 93
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03ca3b2ab0db79160800000000000000
+      internalID: 7032297200834292784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_9
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 2353
+        width: 80
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91234a74950ed68a0800000000000000
+      internalID: -6310140828817542631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_10
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1542
+        width: 108
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa9f045fba54a2b0800000000000000
+      internalID: -5574230660982269197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_11
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 1263
+        width: 571
+        height: 620
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af88447b8452bbda0800000000000000
+      internalID: -5928103490260530950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_12
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 1571
+        width: 89
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9579751986e5fccc0800000000000000
+      internalID: -3688625766585100455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_13
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1272
+        width: 93
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4daff8aa2707e4d70800000000000000
+      internalID: 9029277940714568404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_14
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 462
+        width: 108
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfbfd1901f91b0720800000000000000
+      internalID: 2813370915253779452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_15
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 180
+        width: 595
+        height: 619
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215b30d7f34fe4f90800000000000000
+      internalID: -6967363019978066670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_16
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 464
+        width: 80
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3947e97c5c971fe10800000000000000
+      internalID: 2229697180889674899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_17
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 404
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0d37a0c5a78ebf00800000000000000
+      internalID: 1134493302115482895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_18
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 192
+        width: 93
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc6db9014395d43a0800000000000000
+      internalID: -6679584592168757553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eloid_19
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 193
+        width: 80
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f07cdac64d85e8290800000000000000
+      internalID: -7886268228099520753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a42a2e9df2824884faee8fa1eab4b75e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      eloid_0: -5560061313971138481
+      eloid_1: -913508238956843669
+      eloid_10: -5574230660982269197
+      eloid_11: -5928103490260530950
+      eloid_12: -3688625766585100455
+      eloid_13: 9029277940714568404
+      eloid_14: 2813370915253779452
+      eloid_15: -6967363019978066670
+      eloid_16: 2229697180889674899
+      eloid_17: 1134493302115482895
+      eloid_18: -6679584592168757553
+      eloid_19: -7886268228099520753
+      eloid_2: 6443250783003864788
+      eloid_3: 4601846498021018326
+      eloid_4: 8990767988114263345
+      eloid_5: -5950405705465547415
+      eloid_6: -958401922448190317
+      eloid_7: 3084211133470536580
+      eloid_8: 7032297200834292784
+      eloid_9: -6310140828817542631
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
