@@ -181,17 +181,17 @@ public class Gato : MonoBehaviour
     //SUS DIALOGOS 
     //_________________________________________
     [ TextArea(4, 6)]
-    public string[] gatoDialogoSincomidaTemplate =
+    private string[] gatoDialogoSincomidaTemplate =
     {
         "Gato: ¡MIAUURR!",
-        "Yo: ¿Te encuentras bien, amiguito?",
+        "Yo mero: ¿Te encuentras bien, amiguito?",
         "Gato: MRAUU",
         "Yo: Mmm… pareces tener hambre, déjame buscarte algo de comer.",
 
     };
 
     [ TextArea(4, 6)]
-    public string[] gatoDialogoContaza =
+    private string[] gatoDialogoContaza =
     {
     // Después de dar la primera comida
         "Yo: Aquí tienes.",
@@ -200,7 +200,7 @@ public class Gato : MonoBehaviour
     };
 
     [TextArea(4, 6)]
-    public string[] gatoDialogoConcomida =
+    private string[] gatoDialogoConcomida =
     {
     // Después de dar la primera comida
         "Yo: Aquí tienes.",
@@ -208,7 +208,7 @@ public class Gato : MonoBehaviour
         "Yo: Parece que aún tienes hambre, supongo que tendré que traerte un poco más.",
     };
     [TextArea(4, 6)]
-    public string[] gatoDialogoFinal =
+    private string[] gatoDialogoFinal =
    {
      // Después de la segunda comida
         "Yo: Ahora sí, provecho Bigotes.",
@@ -218,7 +218,7 @@ public class Gato : MonoBehaviour
         "Gato: ¡Miau!"
     };
 
-    public string[] gatoDialogoSatisfecho =
+    private string[] gatoDialogoSatisfecho =
     {
         // Después de dar la primera comida
         "Gato: Rrrrrrr",
