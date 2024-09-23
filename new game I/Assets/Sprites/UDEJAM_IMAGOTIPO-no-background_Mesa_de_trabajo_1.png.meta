@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 3f5880d6f95834e4eb07aa67c93c13bb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6996636078906123206
+    second: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_0
+  - first:
+      213: 1153016647292386530
+    second: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_1
+  - first:
+      213: -7921469132903386210
+    second: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_2
+  - first:
+      213: 3433458579585732825
+    second: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_3
+  - first:
+      213: 5200574567692071238
+    second: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_4
+  - first:
+      213: -751660721804227686
+    second: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_5
+  - first:
+      213: -4277414460039721600
+    second: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_6
+  - first:
+      213: 6986508070229922144
+    second: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_7
+  - first:
+      213: 435249068273329639
+    second: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_8
+  - first:
+      213: 5074062930850484794
+    second: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_9
+  - first:
+      213: 8749955610696337226
+    second: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_0
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 103
+        width: 920
+        height: 629
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c5e165e84f6ee90800000000000000
+      internalID: -6996636078906123206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_1
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 609
+        width: 129
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ec79f12886500010800000000000000
+      internalID: 1153016647292386530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_2
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 609
+        width: 130
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93721a1bc9411290800000000000000
+      internalID: -7921469132903386210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_3
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 286
+        width: 54
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0993b036816af20800000000000000
+      internalID: 3433458579585732825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_4
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 139
+        width: 109
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6417737f3072c2840800000000000000
+      internalID: 5200574567692071238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_5
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 138
+        width: 111
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9bce355e809195f0800000000000000
+      internalID: -751660721804227686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_6
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 200
+        width: 106
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d8638163293a4c0800000000000000
+      internalID: -4277414460039721600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_7
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 138
+        width: 90
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0615472e21015f060800000000000000
+      internalID: 6986508070229922144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_8
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 138
+        width: 136
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e56047b8b05a0600800000000000000
+      internalID: 435249068273329639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_9
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 138
+        width: 125
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3212512a51ba6640800000000000000
+      internalID: 5074062930850484794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_10
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 139
+        width: 106
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a47cdf7c4461e6970800000000000000
+      internalID: 8749955610696337226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_11
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 112
+        width: 207
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8548cb79eb8db40ba2442e8b5440dc
+      internalID: 910649133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b91e55f07217a48429e58cbe87e8d93c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      UDEJAM_IMAGOTIPO-no-background_Mesa_de_trabajo_1_11: 910649133
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

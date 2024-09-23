@@ -8,6 +8,10 @@ using UnityEngine;
 
 public class MainPlayer : MonoBehaviour
 {
+
+    //------------------------
+    // atributos para el player
+    // -------------------------
     public  float velocidad = 4f;
     private Vector3 posicionDobjetivo;
     private bool hasNewClick = false; // Nuevo clic
@@ -17,9 +21,15 @@ public class MainPlayer : MonoBehaviour
     public Transform mano; // Donde se colocará el objeto agarrado
     private GameObject objetoObjetivo = null; // Referencia al objeto que el personaje va a agarrar
 
+    //-----------------------------
+    //Animacion.
+    //-------------------------
+    private Animator animator;
+
     void Start()
     {
         posicionDobjetivo = this.transform.position;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -65,10 +75,22 @@ public class MainPlayer : MonoBehaviour
     private void MoverHaciaObjetivo()
     {
         bool isColliding = Physics2D.OverlapCircle(transform.position, radioDeDeteccion, layerDeColision);
+        // Calcular la dirección hacia el objetivo
+        Vector3 direccion = (posicionDobjetivo - transform.position).normalized;
 
         if (hasNewClick)
         {
             transform.position = Vector3.MoveTowards(transform.position, posicionDobjetivo, velocidad * Time.deltaTime);
+
+            // Actualizar los parámetros de animación
+            animator.SetFloat("MovimientoX", direccion.x);
+            animator.SetFloat("MovimientoY", direccion.y);
+            //animacion
+            if (direccion.x != 0 || direccion.y != 0)
+            {
+                animator.SetFloat("UltimoX", direccion.x);
+                animator.SetFloat("UltimoY", direccion.y);
+            }
 
             if (objetoObjetivo != null && Vector3.Distance(transform.position, objetoObjetivo.transform.position) <= 3f)
             {
@@ -81,7 +103,12 @@ public class MainPlayer : MonoBehaviour
                 hasNewClick = false;
             }
         }
-
+        else
+        {
+            // Si no hay clics, y no se está moviendo, cambiar a la animación de idle
+            animator.SetFloat("MovimientoX", 0);
+            animator.SetFloat("MovimientoY", 0);
+        }
 
         //Si coliciona con
         if (isColliding)
