@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class Piezas : MonoBehaviour
 {
     private bool jugadorEnRango = false;  // Verificar si el jugador está cerca
+    public Notification notification;
 
     private void Update()
     {

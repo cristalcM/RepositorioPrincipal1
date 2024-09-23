@@ -116,6 +116,14 @@ public class MainPlayer : MonoBehaviour
             hasNewClick = false;
             return;
         }
+
+        // Animación de idle si no se está moviendo
+        if (!hasNewClick && (direccion.x == 0 && direccion.y == 0))
+        {
+            // Usar la última dirección para mostrar la animación idle
+            animator.SetFloat("MovimientoX", 0);
+            animator.SetFloat("MovimientoY", 0);
+        }
     }
 
     //Metodo para agarrar el objeto
