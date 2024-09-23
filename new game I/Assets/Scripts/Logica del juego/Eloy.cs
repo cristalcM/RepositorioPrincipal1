@@ -23,8 +23,8 @@ public class Eloy : MonoBehaviour
     public DialogoNPC Dialogo;
     public GameObject panelPregunta;
 
-    static Text TextNombre;
-    static Text TextCarrera;
+   static Text TextNombre;
+    //public static Text TextCarrera;
 
 
     void Start()
@@ -50,7 +50,7 @@ public class Eloy : MonoBehaviour
         }
 
         TextNombre.text = PlayerPrefs.GetString("NamePLayer");
-        TextCarrera.text = PlayerPrefs.GetString("Career");
+        //TextCarrera.text = PlayerPrefs.GetString("Career");
     }
 
     void Update()
@@ -58,8 +58,11 @@ public class Eloy : MonoBehaviour
         if (esperandoRespuesta && Input.GetKeyDown(KeyCode.E))
         {
             IniciarInteraccion();
+           
         }
+
     }
+   
 
     void IniciarInteraccion()
     {
@@ -146,6 +149,7 @@ public class Eloy : MonoBehaviour
     }
 
 
+
     //__________________________________________
     //SUS DIALOGOS 
     //_________________________________________
@@ -157,8 +161,8 @@ public class Eloy : MonoBehaviour
        TextNombre +": ammm las cordenadas son..."
 
     };
-  
-    
+
+
     [SerializeField, TextArea(4, 6)]
     private string[] EloyDialogoConAyuda =
     {
@@ -179,8 +183,7 @@ public class Eloy : MonoBehaviour
         TextNombre +": Me alegra verte. ¿Y cómo no usarla si tu trabajo es magnífico?"
     };
 
-   
-    
+
 }
 
 

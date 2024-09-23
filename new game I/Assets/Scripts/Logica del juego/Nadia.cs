@@ -50,7 +50,7 @@ public class Nadia : MonoBehaviour
         }
 
         TextNombre.text = PlayerPrefs.GetString("NamePLayer");
-        TextCarrera.text = PlayerPrefs.GetString("Career");
+        //TextCarrera.text = PlayerPrefs.GetString("Career");
     }
 
     private void Update()

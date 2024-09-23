@@ -49,7 +49,7 @@ public class Tortuga : MonoBehaviour
         }
 
         TextNombre.text = PlayerPrefs.GetString("NamePLayer");
-        TextCarrera.text = PlayerPrefs.GetString("Career");
+        //TextCarrera.text = PlayerPrefs.GetString("Career");
 
     }
 

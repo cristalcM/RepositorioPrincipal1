@@ -28,7 +28,10 @@ public class InformationPlayer : MonoBehaviour
     public TMP_Text TextMonedas;
     public TMP_Text TextPiezas;
 
+    public Inventario inventario;
 
+
+ 
     int monedas;
     int croquetas;
     int piezas;
@@ -36,6 +39,7 @@ public class InformationPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         if (PlayerPrefs.HasKey("NamePLayer"))
         {
             string playerName = PlayerPrefs.GetString("NamePLayer");
@@ -57,9 +61,13 @@ public class InformationPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        monedas = inventario.monedas;
+        croquetas = inventario.croquetas;
+        piezas = inventario.piezas;
+
         TextComida.text = "Croquetas: " + croquetas;
-        TextComida.text = "Monedas: " + monedas;
-        TextComida.text = "Piezas: " + piezas;
+        TextMonedas.text = "Monedas: " + monedas;
+        TextPiezas.text = "Piezas: " + piezas;
     }
 
     public void ChangeScene(string sceneName)

@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Gato : MonoBehaviour
 {
-    static Text TextNombre;
-    static Text TextCarrera;
 
+
+    static string nombre;
     //-----------------------------
     //Atributos publicos.
     //---------------------------
@@ -30,7 +30,9 @@ public class Gato : MonoBehaviour
     private Player Player;
 
 
-
+    /// <summary>
+    /// Buscar nombre
+    /// </summary>
     private void Start()
     {
         if (PlayerPrefs.HasKey("NamePLayer"))
@@ -47,8 +49,7 @@ public class Gato : MonoBehaviour
             Debug.Log("Se busca carrera");
         }
 
-        TextNombre.text = PlayerPrefs.GetString("NamePLayer");
-        TextCarrera.text = PlayerPrefs.GetString("Career");
+        nombre= PlayerPrefs.GetString("NamePLayer");
 
     }
 
@@ -59,6 +60,7 @@ public class Gato : MonoBehaviour
         if (jugadorEnRango && Input.GetKeyDown(KeyCode.E))  // Si el jugador está en rango y presiona E
         {
             Player = FindFirstObjectByType<Player>();
+
             if (Player != null && Player.croquetas > 0)  // Solo dar comida si el jugador tiene comida
             {
                 DarComida(Player.TieneTaza());  // Llama a DarComida si el jugador está cerca y tiene comida
@@ -71,6 +73,8 @@ public class Gato : MonoBehaviour
                 Dialogo.MostrarDialogo(gatoDialogoSincomida);
             }
         }
+
+      
 
     }
 
@@ -112,7 +116,7 @@ public class Gato : MonoBehaviour
             else
             {
                 comidaRecibida++;
-                Debug.Log("El gato ha recibido algo de comida.");
+                Debug.Log(nombre + "El gato ha recibido algo de comida.");
                 Dialogo.MostrarDialogo(gatoDialogoConcomida);
                 if (comidaRecibida == 3)
                 {
@@ -194,48 +198,48 @@ public class Gato : MonoBehaviour
     //__________________________________________
     //SUS DIALOGOS 
     //_________________________________________
-    [SerializeField, TextArea(4, 6)]
-    private string[] gatoDialogoSincomida =
+    [ TextArea(4, 6)]
+    public string[] gatoDialogoSincomida =
      {
         "Gato: ¡MIAUURR!",
-        TextNombre +": ¿Te encuentras bien, amiguito?",
+        nombre +": ¿Te encuentras bien, amiguito?",
         "Gato: MRAUU",
-        TextNombre +": Mmm… pareces tener hambre, déjame buscarte algo de comer.",
+        nombre +": Mmm… pareces tener hambre, déjame buscarte algo de comer.",
 
 
     };
-    [SerializeField, TextArea(4, 6)]
-    private string[] gatoDialogoContaza =
+    [ TextArea(4, 6)]
+    public string[] gatoDialogoContaza =
    {
     // Después de dar la primera comida
-        TextNombre +": Aquí tienes.",
+        nombre+": Aquí tienes.",
         "Gato: Mrauu",
-        TextNombre +": Me alegra que fuera suficiente.",
+        nombre +": Me alegra que fuera suficiente.",
     };
-    [SerializeField, TextArea(4, 6)]
-    private string[] gatoDialogoConcomida =
+    [TextArea(4, 6)]
+    public string[] gatoDialogoConcomida =
     {
     // Después de dar la primera comida
-        TextNombre +": Aquí tienes.",
+        nombre +": Aquí tienes.",
         "Gato: Mrauu",
-        TextNombre +": Parece que aún tienes hambre, supongo que tendré que traerte un poco más.",
+        nombre +": Parece que aún tienes hambre, supongo que tendré que traerte un poco más.",
     };
-    [SerializeField, TextArea(4, 6)]
-    private string[] gatoDialogoFinal =
+    [TextArea(4, 6)]
+    public string[] gatoDialogoFinal =
    {
      // Después de la segunda comida
-        TextNombre +": Ahora sí, provecho Bigotes.",
+        nombre +": Ahora sí, provecho Bigotes.",
         "Gato: Miau",
         "*El gato le da una moneda en agradecimiento.*",
-        TextNombre +": Gracias amigo, regresaré a visitarte más tarde por si vuelves a tener hambre.",
+        nombre +": Gracias amigo, regresaré a visitarte más tarde por si vuelves a tener hambre.",
         "Gato: ¡Miau!"
     };
 
-    private string[] gatoDialogoSatisfecho =
+    public string[] gatoDialogoSatisfecho =
     {
         // Después de dar la primera comida
         "Gato: Rrrrrrr",
-        TextNombre +": Es bueno ver que estés bien. Nos vemos más tarde."
+        nombre +": Es bueno ver que estés bien. Nos vemos más tarde."
 ,
     };
 
