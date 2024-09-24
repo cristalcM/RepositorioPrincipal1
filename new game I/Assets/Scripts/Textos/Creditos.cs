@@ -26,13 +26,13 @@ public class Creditos : MonoBehaviour
     void mostarPanel()
     {
         panelCreditos.gameObject.SetActive(true);
-        Time.timeScale = 0f;
+        
     }
 
     void ocultarpanel()
     {
         panelCreditos.gameObject.SetActive(false);
-        Time.timeScale = 1f;
+        
     }
 
 
